@@ -13,8 +13,8 @@ const currentPagePath = '/' + (pathParts.length > 1 ? pathParts.slice(1).join('/
 
 const navLinks = [
   { label: t.nav.home, path: '/' },
-  { label: t.nav.cortex, path: '/cortex-framework' },
-  { label: t.nav.services, path: '/services' },
+  { label: t.nav.solutions, path: '/solutions' },
+  { label: t.nav.technology, path: '/technology' },
   { label: t.nav.about, path: '/about' },
   { label: t.nav.contact, path: '/contact' },
 ];
@@ -97,7 +97,7 @@ function isActive(linkPath: string): boolean {
 
       <!-- CTA button (desktop) — dark Anthropic style -->
       <a
-        href="#"
+        href={getLocalizedPath(lang, '/contact')}
         class="hidden md:inline-flex items-center px-5 py-2 bg-bg-dark text-bg-primary text-sm font-semibold rounded-full transition-all duration-200 hover:bg-bg-dark/90 hover:scale-[1.02]"
       >
         {t.nav.bookCall}
@@ -155,7 +155,7 @@ function isActive(linkPath: string): boolean {
 
       <!-- CTA button (mobile) — dark Anthropic style -->
       <a
-        href="#"
+        href={getLocalizedPath(lang, '/contact')}
         class="inline-flex items-center justify-center px-5 py-2.5 bg-bg-dark text-bg-primary text-sm font-semibold rounded-full transition-all duration-200 hover:bg-bg-dark/90 mt-1"
       >
         {t.nav.bookCall}
