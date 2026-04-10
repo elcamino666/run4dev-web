@@ -3,133 +3,133 @@ import type { SiteContent } from './types';
 export const de: SiteContent = {
   nav: {
     home: 'Startseite',
-    cortex: 'Cortex Framework',
-    services: 'Leistungen',
+    solutions: 'L\u00f6sungen',
+    technology: 'Technologie',
     about: '\u00dcber uns',
     contact: 'Kontakt',
     bookCall: 'Gespr\u00e4ch buchen',
   },
   home: {
     hero: {
-      h1: 'Wir entwickeln KI-Agenten, die Ihre Gesch\u00e4ftsprozesse automatisieren',
-      subtitle: 'Run4Dev entwickelt intelligente KI-Systeme, die repetitive Workflows \u00fcbernehmen, Betriebskosten senken und Ihrem Team freie Hand f\u00fcr das Wesentliche geben. Angetrieben von unserem propriet\u00e4ren Cortex-Framework.',
+      h1: 'Ihr Team verschwendet Zeit mit Aufgaben, die KI erledigen sollte',
+      subtitle: 'Wir entwickeln ma\u00dfgeschneiderte KI-Agenten, die repetitive Workflows \u00fcbernehmen, Betriebskosten senken und Ihrem Team freie Hand f\u00fcr Wachstum geben.',
       ctaPrimary: 'Kostenloses Strategiegespr\u00e4ch buchen',
-      ctaSecondary: 'Cortex in Aktion erleben',
+      ctaSecondary: 'Unsere L\u00f6sungen ansehen',
     },
     trustBar: [
-      'Reaktionszeit: < 30 Min.',
       'Standort Deutschland',
       'Enterprise-Sicherheit',
-      'Multi-Provider-KI',
+      '< 30 Min. Reaktionszeit',
+      'DSGVO-konform',
     ],
-    valueProposition: {
-      headline: 'Intelligente Automatisierung mit echtem ROI',
-      description: 'Die meisten Unternehmen verschwenden 40 % der Arbeitszeit mit Aufgaben, die KI erledigen kann. Unser Cortex-Framework setzt spezialisierte KI-Agenten ein, die rund um die Uhr fehlerfrei arbeiten \u2014 bei Prozessen, die Ihr Team bisher ausgebremst haben.',
+    painSolution: {
+      headline: 'Ihr Team verdient Besseres als repetitive Arbeit',
+      description: 'Unternehmen verschwenden 40 % der Arbeitszeit mit Aufgaben, die KI besser erledigt. Wir setzen Agenten ein, die rund um die Uhr fehlerfrei arbeiten.',
       cards: [
         {
-          title: 'KI-Agenten-Entwicklung',
-          description: 'Ma\u00dfgeschneiderte KI-Agenten f\u00fcr Ihre spezifischen Workflows. Von Kundenservice bis Datenverarbeitung \u2014 unsere Agenten integrieren sich in Ihre bestehenden Tools und lernen Ihre Gesch\u00e4ftslogik.',
+          title: 'Schluss mit manueller Zeitverschwendung',
+          description: 'Wir entwickeln KI-Agenten f\u00fcr Ihre genauen Workflows. Kundensupport, Datenverarbeitung, Reporting \u2014 automatisch erledigt.',
         },
         {
-          title: 'Prozessautomatisierung',
-          description: 'End-to-End-Automatisierung repetitiver Gesch\u00e4ftsprozesse. Wir analysieren Ihre Abl\u00e4ufe, identifizieren Engp\u00e4sse und setzen KI-L\u00f6sungen ein, die mit Ihrem Wachstum skalieren.',
+          title: 'Betriebskosten senken',
+          description: 'End-to-End-Prozessautomatisierung, die Ihre bestehenden Systeme verbindet. Keine manuelle Daten\u00fcbertragung mehr.',
         },
         {
-          title: 'Cortex Framework',
-          description: 'Unsere Open-Source-Agenten-Orchestrierungsengine. Multi-Provider (Claude, GPT, Gemini), integriertes Kostentracking, hierarchische Agenten-Delegation und Enterprise-Sandboxing.',
+          title: 'Skalieren ohne einzustellen',
+          description: 'KI-Agenten, die mit Ihrem Unternehmen wachsen. Bew\u00e4ltigen Sie die 10-fache Arbeitslast ohne zus\u00e4tzliches Personal.',
         },
       ],
     },
-    metricsHeadline: 'Bewiesene Ergebnisse, messbarer Einfluss',
+    caseStudy: {
+      label: 'Echte Ergebnisse',
+      headline: 'Was wir gebaut haben',
+      clientType: 'Ein Workforce-Management-Unternehmen',
+      resultHeadline: 'Manuelle Betriebszeit um 80 % reduziert',
+      description: 'Spezialisierte KI-Agenten f\u00fcr Einsatzplanung, Mitarbeiterverwaltung und den t\u00e4glichen Betrieb einer Multi-Mandanten-Plattform. Prozesse, die Stunden dauerten, werden jetzt in Minuten erledigt. Echtzeit-Kostentracking gew\u00e4hrleistet Budget-Planbarkeit.',
+    },
+    metricsHeadline: 'Bewiesene Ergebnisse, messbare Wirkung',
     metrics: [
-      { value: '10', suffix: 'x', label: 'Schnellere Prozessausf\u00fchrung als manuelle Workflows' },
-      { value: '60', suffix: '%', label: 'Durchschnittliche Kostenreduktion bei automatisierten Prozessen' },
-      { value: '24/7', suffix: '', label: 'KI-Agenten arbeiten rund um die Uhr, ohne Ausfallzeiten' },
-      { value: '3', suffix: '+', label: 'KI-Anbieter unterst\u00fctzt (Claude, GPT, Gemini)' },
+      { value: '10', suffix: 'x', label: 'Schnellere Prozessausf\u00fchrung' },
+      { value: '60', suffix: '%', label: 'Durchschnittliche Kostensenkung' },
+      { value: '24/7', suffix: '', label: 'KI-Agenten immer im Einsatz' },
+      { value: '80', suffix: '%', label: 'Weniger manuelle Arbeit f\u00fcr Ihr Team' },
     ],
     howItWorks: {
-      headline: 'Von der Idee zum einsatzbereiten KI-Agenten in 4 Schritten',
-      subtitle: 'So funktioniert es',
+      headline: 'Von der Idee zum KI-Agenten in 4 Schritten',
+      subtitle: 'So funktioniert\u2019s',
       steps: [
         {
           title: 'Analyse',
-          description: 'Wir pr\u00fcfen Ihre Abl\u00e4ufe, identifizieren die Automatisierungspotenziale mit dem h\u00f6chsten ROI und kartieren die Prozesse, die KI-Agenten \u00fcbernehmen k\u00f6nnen.',
+          description: 'Wir pr\u00fcfen Ihre Abl\u00e4ufe und identifizieren die Automatisierungen mit dem h\u00f6chsten ROI.',
         },
         {
-          title: 'Architektur',
-          description: 'Unsere Ingenieure entwerfen das Agentensystem mit Cortex \u2014 inklusive Tools, Delegationsketten und Provider-Strategie, zugeschnitten auf Ihre Anforderungen.',
+          title: 'Design',
+          description: 'Wir entwerfen das KI-Agenten-System passend zu Ihren Anforderungen.',
         },
         {
           title: 'Entwicklung & Test',
-          description: 'Wir entwickeln, testen im Sandbox und iterieren. Jeder Agent wird an realen Szenarien validiert, mit integrierten Kostenkontrollen.',
+          description: 'Wir entwickeln, testen und validieren anhand realer Szenarien.',
         },
         {
           title: 'Deployment & Optimierung',
-          description: 'Agenten gehen live mit Echtzeit-Monitoring, Kostentracking und kontinuierlicher Optimierung. Sie sehen Ergebnisse ab dem ersten Tag.',
+          description: 'Ihre Agenten gehen live \u2014 mit Monitoring und kontinuierlicher Verbesserung.',
         },
       ],
     },
+    telegramTeaser: {
+      label: 'Bald verf\u00fcgbar',
+      headline: 'Ihr pers\u00f6nlicher KI-Assistent auf Telegram',
+      description: 'Ein vollwertiger KI-Assistent, der lokal auf Ihrem Rechner l\u00e4uft. Chatten Sie \u00fcber Telegram. Er kann coden, suchen, Dateien verwalten, Aufgaben automatisieren \u2014 alles, was Sie brauchen. Ihre Daten verlassen nie Ihr Ger\u00e4t.',
+      points: ['L\u00e4uft lokal', 'Telegram-Interface', 'Ihre Daten bleiben bei Ihnen'],
+      cta: 'Auf die Warteliste',
+      emailPlaceholder: 'ihre@email.de',
+    },
     cta: {
-      headline: 'Bereit f\u00fcr Automatisierung? Lassen Sie uns sprechen.',
-      description: 'Buchen Sie ein kostenloses 30-min\u00fctiges Strategiegespr\u00e4ch. Wir identifizieren Ihre Top-3-Automatisierungschancen und zeigen Ihnen den erwarteten ROI.',
+      headline: 'Bereit zu automatisieren?',
+      description: 'Buchen Sie ein kostenloses 30-Min\u00fctiges Strategiegespr\u00e4ch. Wir identifizieren Ihre Top-Automatisierungschancen und zeigen den erwarteten ROI.',
       button: 'Kostenloses Strategiegespr\u00e4ch buchen',
-      note: 'Durchschnittliche Reaktionszeit: 32 Minuten',
+      note: 'Durchschnittliche Antwortzeit: 32 Minuten',
     },
   },
-  cortex: {
+  technology: {
     hero: {
-      h1: 'Cortex: Das KI-Agenten-Framework f\u00fcr Enterprise-Automatisierung',
-      subtitle: 'Eine TypeScript-basierte Orchestrierungsengine, mit der Sie intelligente KI-Agenten \u00fcber mehrere Anbieter hinweg definieren, bereitstellen und verwalten. Zero-Config-Setup. Integriertes Kostentracking. Enterprise-Sandboxing.',
-      ctaPrimary: 'Mit Cortex starten',
-      ctaSecondary: 'Dokumentation ansehen',
+      h1: 'Aufgebaut auf Technologie, die wir selbst entwickelt haben',
+      subtitle: 'Unsere propriet\u00e4re Cortex-Engine ist der Grund, warum unsere KI-L\u00f6sungen in der Produktion funktionieren \u2014 nicht nur in Demos.',
+      ctaPrimary: 'Unsere L\u00f6sungen ansehen',
+      ctaSecondary: 'Mit unserem Team sprechen',
     },
-    features: {
-      headline: 'Alles, was Sie f\u00fcr produktionsreife KI-Agenten brauchen',
-      items: [
+    whyItMatters: {
+      headline: 'Warum das f\u00fcr Sie wichtig ist',
+      cards: [
         {
-          title: 'Multi-Provider-Intelligenz',
-          description: 'Nahtloser Wechsel zwischen Claude, GPT und Gemini\u2014oder alle gleichzeitig nutzen. Eine Codebasis, jedes LLM. Die zentrale Model Registry konfiguriert Anbieter automatisch.',
+          title: 'Ihre Agenten fallen in der Produktion nicht aus',
+          description: 'Cortex ist typsicher und praxiserprobt. Integrierte Fehlerbehandlung, Sandboxing und Retry-Logik sorgen daf\u00fcr, dass Ihre KI-Agenten Grenzf\u00e4lle zuverl\u00e4ssig bew\u00e4ltigen.',
         },
         {
-          title: 'Hierarchische Agenten-Delegation',
-          description: 'Erstellen Sie Orchestrator-Agenten, die automatisch an spezialisierte Sub-Agenten delegieren. Jeder Agent hat eigene Tools, System-Prompts und Modelle.',
+          title: 'Sie sind nie an einen KI-Anbieter gebunden',
+          description: 'Cortex funktioniert mit Claude, GPT, Gemini und mehr. Wenn ein Anbieter die Preise erh\u00f6ht oder ausf\u00e4llt, wechseln wir ohne Neuentwicklung.',
         },
         {
-          title: 'Typisiertes Kontextsystem',
-          description: 'Definieren Sie Ihren Gesch\u00e4ftskontext einmal mit TypeScript-Generics. Jeder Agent, jedes Tool und jeder Prompt-Builder erh\u00e4lt volle Typsicherheit.',
+          title: 'Sie sehen genau, wof\u00fcr Sie zahlen',
+          description: 'Jeder KI-Aufruf wird bis zum Token getrackt. Echtzeit-Kosten-Dashboards \u2014 keine \u00dcberraschungen bei der Rechnung.',
         },
-        {
-          title: 'Deferred Tool Discovery',
-          description: 'Agenten ben\u00f6tigen nicht 100 Tools gleichzeitig. Der hierarchische Tool-Kategoriebaum von Cortex l\u00e4sst Agenten Tools bei Bedarf suchen und aktivieren.',
-        },
-        {
-          title: 'Skript-Sandbox',
-          description: 'KI-Agenten k\u00f6nnen JavaScript in einer sicheren Worker-Thread-Sandbox schreiben und ausf\u00fchren. Speicherlimits, Timeouts und Tool-Call-Caps verhindern unkontrollierte Skripte.',
-        },
-        {
-          title: 'Echtzeit-Kostentracking',
-          description: 'Jeder Token wird erfasst. Jeder API-Call wird bepreist. Erhalten Sie Kosten-Breakdowns pro Agent und Modell, inklusive Prompt-Caching.',
-        },
-        {
-          title: 'Streaming & SSE',
-          description: 'Integrierte Server-Sent Events f\u00fcr Echtzeit-Streaming an Ihr Frontend. Sehen Sie Agent-Reasoning, Tool-Ausf\u00fchrungen und Ergebnisse live.',
-        },
-        {
-          title: 'Debug-UI',
-          description: 'Visuelles Debugging mit integriertem Event-Bus. Verfolgen Sie Agent-L\u00e4ufe, inspizieren Sie Tool-Calls und analysieren Sie Kosten in einem Live-Dashboard.',
-        },
-        {
-          title: 'Human-in-the-Loop',
-          description: 'Best\u00e4tigungsflows erm\u00f6glichen es Agenten, vor der Ausf\u00fchrung sensibler Aktionen menschliche Freigabe anzufordern. Nahtlose Wiederaufnahme nach Best\u00e4tigung.',
-        },
-        {
-          title: 'Lifecycle Hooks',
-          description: 'Nutzen Sie onRoundComplete, onToolCall, onComplete und onError Hooks. Erstellen Sie individuelles Logging, Alerting oder Analytics f\u00fcr jede Agenten-Interaktion.',
-        },
+      ],
+    },
+    underTheHood: {
+      headline: 'Unter der Haube',
+      features: [
+        { title: 'Hierarchische Agenten-Delegation', description: 'Orchestrator-Agenten delegieren automatisch an spezialisierte Sub-Agenten.' },
+        { title: 'Sandboxed Code-Ausf\u00fchrung', description: 'KI-Agenten f\u00fchren Scripts in isolierten Umgebungen mit Speicherlimits und Timeouts aus.' },
+        { title: 'Echtzeit-Streaming', description: 'Server-Sent Events f\u00fcr Live-Agenten-Reasoning und Tool-Ausf\u00fchrung.' },
+        { title: 'Rollenbasierte Zugriffskontrolle', description: 'Tools und Aktionen gesteuert durch Benutzerrollen und Berechtigungen.' },
+        { title: 'Human-in-the-Loop', description: 'Agenten pausieren f\u00fcr menschliche Freigabe bei sensiblen Operationen.' },
+        { title: 'Lifecycle-Hooks', description: 'Zugriff auf jedes Agenten-Event f\u00fcr Custom-Logging, Alerting oder Analytics.' },
+        { title: 'Debug-Dashboard', description: 'Visuelles Debugging mit Live-Event-Tracing und Kostenanalyse.' },
+        { title: 'Multi-Modell-Kostenoptimierung', description: 'Automatische Anbieterauswahl basierend auf Aufgabenkomplexit\u00e4t und Budget.' },
       ],
     },
     codeExample: {
-      headline: 'In unter 10 Zeilen einsatzbereit',
+      headline: 'Saubere API, leistungsstarke Engine',
       code: `import { createCortex, Model } from "@run4dev/cortex";
 
 const { defineAgent, defineTool, createRuntime } = createCortex<{
@@ -146,143 +146,160 @@ const agent = defineAgent({
   subAgents: [billingAgent, escalationAgent],
 });
 
-const runtime = createRuntime(); // zero-config, auto-resolves providers
+const runtime = createRuntime();
 const result = await runtime.run({
   agent,
   messages,
   context: { userId: "u_123", role: "admin" },
 });
-console.log(result.cost.totalCostUsd); // every token tracked`,
+console.log(result.cost.totalCostUsd);`,
     },
     useCases: {
       headline: 'Was Teams mit Cortex bauen',
       items: [
         {
-          title: 'Kundenservice-Automatisierung',
-          description: 'Agenten, die Tickets l\u00f6sen, Wissensdatenbanken durchsuchen und komplexe F\u00e4lle eskalieren\u2014Reaktionszeiten um 80% reduziert.',
+          title: 'Kundensupport-Automatisierung',
+          description: 'Tickets 80 % schneller l\u00f6sen mit Agenten, die Wissensdatenbanken durchsuchen und intelligent eskalieren.',
         },
         {
           title: 'Datenverarbeitungs-Pipelines',
-          description: 'Agenten, die Daten extrahieren, transformieren, validieren und \u00fcber Systeme hinweg weiterleiten. Human-in-the-Loop bei Ausnahmen.',
+          description: 'Null manuelle Datenverarbeitung. Agenten extrahieren, transformieren, validieren und routen Daten zwischen Systemen.',
         },
         {
-          title: 'Interne Abl\u00e4ufe',
-          description: 'HR-Onboarding, IT-Helpdesk, Bestandsverwaltung\u2014jeder repetitive interne Prozess wird zum Agenten-Workflow.',
+          title: 'Interne Prozesse',
+          description: 'HR-Onboarding, IT-Helpdesk und Lagerverwaltungs-Workflows automatisieren.',
         },
         {
-          title: 'Mehrstufige Gesch\u00e4ftslogik',
-          description: 'Orchestrator-Agenten, die spezialisierte Sub-Agenten f\u00fcr komplexe Freigabeketten, Compliance-Checks und Reporting koordinieren.',
+          title: 'Komplexe Gesch\u00e4ftslogik',
+          description: 'Mehrstufige Freigabeketten, Compliance-Pr\u00fcfungen und automatisiertes Reporting orchestrieren.',
         },
       ],
     },
-  },
-  services: {
-    hero: {
-      h1: 'KI-Automatisierungsdienste, die mit Ihrem Unternehmen wachsen',
-      subtitle: 'Von strategischer Beratung bis zum Full-Stack-Agenten-Deployment: Wir liefern alles, was Sie brauchen, um manuelle Prozesse in intelligente, automatisierte Workflows zu transformieren.',
+    cta: {
+      headline: 'M\u00f6chten Sie sehen, wie das f\u00fcr Sie funktioniert?',
+      button: 'Strategiegespr\u00e4ch buchen',
     },
-    deliverablesLabel: 'Das erhalten Sie:',
+  },
+  solutions: {
+    hero: {
+      h1: 'Jedes Unternehmen hat Prozesse, die keine Menschen brauchen',
+      subtitle: 'Wir finden die Engp\u00e4sse, die Ihrem Team Zeit rauben, und ersetzen sie durch KI-Agenten, die schneller, g\u00fcnstiger und rund um die Uhr arbeiten.',
+    },
     items: [
       {
-        title: 'KI-Strategie & Beratung',
-        description: 'Unsicher, wo Sie anfangen sollen? Wir pr\u00fcfen Ihre Abl\u00e4ufe, kartieren Automatisierungschancen und erstellen eine priorisierte Roadmap mit klaren ROI-Prognosen f\u00fcr jede Initiative.',
-        deliverables: 'Prozess-Audit-Report, Automatisierungs-Chancen-Matrix, ROI-Prognosen, Implementierungs-Roadmap, Technologie-Stack-Empfehlung.',
-        imageAlt: 'Zwei Fachleute pr\u00fcfen ein holographisches Daten-Dashboard',
+        pain: 'Ihr Team ertrinkt in repetitiven Aufgaben',
+        title: 'Ma\u00dfgeschneiderte KI-Agenten-Entwicklung',
+        description: 'Wir entwickeln Agenten f\u00fcr Ihre genauen Workflows \u2014 Kundensupport, Datenverarbeitung, Reporting, Operations. Jeder Agent ist ma\u00dfgeschneidert mit den richtigen Tools und Leitplanken.',
+        result: 'Teams gewinnen 20+ Stunden pro Woche zur\u00fcck',
+        deliverables: 'Custom-Agenten-Architektur, Tool-Entwicklung, Testsuite, Deployment, Dokumentation.',
       },
       {
-        title: 'Individuelle KI-Agenten-Entwicklung',
-        description: 'Wir entwerfen und bauen KI-Agenten, die exakt auf Ihre Gesch\u00e4ftslogik zugeschnitten sind. Mit unserem Cortex-Framework wird jeder Agent mit den richtigen Tools, dem richtigen Modell und den richtigen Leitplanken entwickelt.',
-        deliverables: 'Individuelle Agenten-Architektur, Tool-Entwicklung, Provider-Optimierung, Test-Suite, Deployment-Konfiguration, Dokumentation.',
-        imageAlt: 'Entwickler arbeitet am Code mit KI-Agenten-Visualisierung auf dem Bildschirm',
-      },
-      {
+        pain: 'Ihre Systeme sprechen nicht miteinander',
         title: 'Prozessautomatisierung & Integration',
-        description: 'Wir verbinden Ihre KI-Agenten mit Ihren bestehenden Systemen\u2014CRMs, ERPs, Datenbanken, APIs, Kommunikationstools. End-to-End-Automatisierung vom Trigger bis zur Aktion, mit menschlicher Kontrolle wo n\u00f6tig.',
-        deliverables: 'Systemintegration, API-Konnektoren, Workflow-Automatisierung, Monitoring-Dashboards, Alerts, SLA-Garantien.',
-        imageAlt: 'Zentraler Cortex-Hub verbunden mit Icons g\u00e4ngiger Business-Tools',
+        description: 'Wir verbinden Ihre KI-Agenten mit Ihren bestehenden Systemen \u2014 CRMs, ERPs, Datenbanken, APIs, Kommunikationstools. End-to-End-Automatisierung mit menschlicher Kontrolle, wo Sie sie brauchen.',
+        result: 'Null manuelle Daten\u00fcbertragung zwischen Systemen',
+        deliverables: 'Systemintegration, API-Connectoren, Workflow-Automatisierung, Monitoring-Dashboards.',
       },
       {
+        pain: 'Sie wissen nicht, wo Sie mit KI anfangen sollen',
+        title: 'KI-Strategie & Beratung',
+        description: 'Wir analysieren Ihre Abl\u00e4ufe, identifizieren Automatisierungschancen und erstellen eine priorisierte Roadmap mit klaren ROI-Prognosen. Unverbindlich.',
+        result: 'Klarer Plan mit ROI-Prognose, bevor Sie einen Euro ausgeben',
+        deliverables: 'Prozess-Audit-Bericht, Automatisierungs-Chancen-Matrix, ROI-Prognosen, Umsetzungs-Roadmap.',
+      },
+      {
+        pain: 'Sie brauchen mehr als nur KI',
         title: 'Web- & App-Entwicklung',
-        description: '\u00dcber KI hinaus entwickeln wir die digitalen Produkte, die Ihr Unternehmen braucht. Individuelle Webanwendungen, mobile Apps und Dashboards\u2014alle f\u00fcr Performance, Skalierbarkeit und au\u00dfergew\u00f6hnliche User Experience optimiert.',
-        deliverables: 'Full-Stack Web-/Mobile-Entwicklung, UI/UX-Design, API-Entwicklung, Cloud-Deployment, laufende Wartung.',
-        imageAlt: 'Moderne Web- und Mobile-App-Mockups auf mehreren Ger\u00e4ten',
+        description: '\u00dcber KI hinaus entwickeln wir die digitalen Produkte, die Ihr Unternehmen braucht. Web-Applikationen, Mobile Apps, Dashboards \u2014 f\u00fcr Performance und exzellente User Experience.',
+        result: 'Ein Team, von Anfang bis Ende \u2014 kein Anbieter-Jonglieren',
+        deliverables: 'Full-Stack Web/Mobile-Entwicklung, UI/UX-Design, API-Entwicklung, Cloud-Deployment.',
       },
       {
+        pain: 'Es muss auch nach dem Launch funktionieren',
         title: 'Laufender Support & Optimierung',
-        description: 'KI-Agenten verbessern sich mit der Zeit. Wir \u00fcberwachen die Performance, optimieren Kosten, trainieren mit neuen Daten und entwickeln Ihre Agenten weiter, w\u00e4hrend Ihr Unternehmen w\u00e4chst.',
-        deliverables: '24/7-Monitoring, Kostenoptimierungs-Reports, vierterlj\u00e4hrliche Strategie-Reviews, Priority-Support, Agenten-Upgrades.',
-        imageAlt: 'Performance-Monitoring-Dashboard mit Optimierungsmetriken',
+        description: 'KI-Agenten werden mit der Zeit besser. Wir \u00fcberwachen Performance, optimieren Kosten und entwickeln Ihre Agenten weiter, wenn Ihr Unternehmen w\u00e4chst.',
+        result: 'KI, die mit der Zeit besser wird, nicht veraltet',
+        deliverables: 'Monitoring, Kostenoptimierungs-Reports, Quartals-Reviews, Priority-Support, Agenten-Upgrades.',
       },
     ],
+    cta: {
+      headline: 'Nicht sicher, welche L\u00f6sung passt?',
+      description: 'Buchen Sie ein kostenloses Strategiegespr\u00e4ch und wir finden es gemeinsam heraus.',
+      button: 'Kostenloses Strategiegespr\u00e4ch buchen',
+    },
   },
   about: {
     hero: {
-      h1: 'Das Team hinter den KI-Agenten',
-      intro: 'Run4Dev ist ein Software-Engineering-Unternehmen mit Sitz in Regensburg. Wir haben mit Web- und Mobile-Apps angefangen\u2014und waren gut darin. Dann haben wir gesehen, wie viel Zeit Unternehmen mit Prozessen verschwenden, die KI in Sekunden automatisieren kann. Also haben wir Cortex gebaut.',
+      h1: 'Wir wollten kein KI-Framework bauen',
+      intro: 'Wir haben reale Kundenprobleme gel\u00f6st \u2014 Zeiterfassung, Workforce Management, Operations \u2014 als wir merkten, dass wir immer wieder die gleiche Agenten-Infrastruktur bauten. Also haben wir Cortex entwickelt.',
     },
     story: {
       headline: 'Unsere Geschichte',
-      content: 'Wir wollten kein KI-Framework bauen. Wir l\u00f6sten echte Kundenprobleme\u2014Zeiterfassung, Personalverwaltung, Betriebsabl\u00e4ufe\u2014als wir merkten, dass wir immer wieder die gleiche Agenten-Infrastruktur bauten. Cortex entstand aus dieser Frustration. Ein sauberes, typisiertes, Multi-Provider-Framework, das die schwierigen Teile \u00fcbernimmt, damit Sie sich auf die Gesch\u00e4ftslogik konzentrieren k\u00f6nnen.\n\nHeute treibt Cortex alle unsere Automatisierungsprojekte an, und wir machen es Unternehmen zug\u00e4nglich, die schnell vorankommen wollen, ohne das Rad neu zu erfinden.',
+      content: 'Wir wollten kein KI-Framework bauen. Wir haben reale Kundenprobleme gel\u00f6st \u2014 Zeiterfassung, Workforce Management, Operations \u2014 als wir merkten, dass wir immer wieder die gleiche Agenten-Infrastruktur bauten. Cortex entstand aus dieser Frustration. Eine saubere, typsichere, Multi-Provider-Engine, die die schwierigen Teile \u00fcbernimmt, damit wir uns auf die Gesch\u00e4ftslogik konzentrieren k\u00f6nnen.\n\nHeute treibt Cortex jedes Automatisierungsprojekt an, das wir liefern. Und wir bauen etwas Neues \u2014 einen pers\u00f6nlichen KI-Assistenten, der lokal l\u00e4uft und mit Ihnen \u00fcber Telegram spricht. Weil wir glauben, dass jeder eine KI verdient, die f\u00fcr ihn arbeitet \u2014 nicht umgekehrt.',
     },
+    setsApartHeadline: 'Was uns unterscheidet',
     differentiators: [
       {
         title: 'Wir nutzen, was wir verkaufen.',
-        description: 'Cortex ist keine Marketing-\u00dcbung\u2014es ist dasselbe Framework, das wir in jedem Projekt einsetzen. Jede Funktion entstand aus einem echten Produktionsbedarf.',
+        description: 'Cortex l\u00e4uft jeden Tag in der Produktion auf echten Kundenprojekten. Jedes Feature existiert, weil ein reales Projekt es brauchte.',
       },
       {
         title: 'Deutsche Ingenieurskunst, globale Reichweite.',
-        description: 'Sitz in Deutschland mit Enterprise-Standards f\u00fcr Sicherheit, Zuverl\u00e4ssigkeit und Datenschutz. Kunden weltweit.',
+        description: 'Sitz in Regensburg mit Enterprise-Standards f\u00fcr Sicherheit, Zuverl\u00e4ssigkeit und Datenschutz. DSGVO-konform von Anfang an.',
       },
       {
-        title: 'Full-Stack-Kompetenz.',
-        description: 'Wir machen nicht nur KI. Wir bauen die Web-Apps, die APIs, die Integrationen und die Infrastruktur drumherum. Ein Team, von Anfang bis Ende.',
+        title: 'Ein Team, von Anfang bis Ende.',
+        description: 'Wir machen nicht nur KI. Wir bauen die Web-Apps, APIs, Integrationen und die Infrastruktur drumherum.',
       },
       {
-        title: 'Transparente Preise.',
-        description: 'Unser Kostentracking ist nicht nur f\u00fcr unsere Kunden\u2014es ist in Cortex eingebaut. Sie sehen genau, was jeder Agenten-Lauf kostet, bis zum Token.',
+        title: 'Transparent vom ersten Tag.',
+        description: 'Echtzeit-Kostentracking ist nicht nur ein Feature, das wir verkaufen \u2014 so f\u00fchren wir jedes Projekt. Sie wissen immer, wof\u00fcr Sie zahlen.',
       },
     ],
     company: {
       name: 'Run4Dev',
-      location: 'Steinweg 4, 93059 Regensburg, Germany',
+      location: 'Steinweg 4, 93059 Regensburg, Deutschland',
       focus: 'KI-Agenten-Entwicklung, Prozessautomatisierung, Web- & App-Entwicklung',
-      technology: 'Cortex Framework (TypeScript, Node.js)',
+      technology: 'Cortex Engine (TypeScript, Node.js)',
       email: 'eni@run4dev.com',
+    },
+    cta: {
+      headline: 'Bereit, mit uns zu arbeiten?',
+      button: 'Kontakt aufnehmen',
     },
   },
   contact: {
     hero: {
-      h1: 'Lassen Sie uns etwas Au\u00dfergew\u00f6hnliches schaffen',
-      subtitle: 'Bereit, Ihre Gesch\u00e4ftsprozesse mit KI zu automatisieren? Ob Sie ein konkretes Projekt im Sinn haben oder einfach erkunden m\u00f6chten, was m\u00f6glich ist \u2014 wir freuen uns auf Ihre Nachricht.',
+      h1: 'Lassen Sie uns herausfinden, was KI f\u00fcr Sie tun kann',
+      subtitle: 'Ob Sie ein konkretes Projekt im Sinn haben oder einfach erkunden m\u00f6chten, was m\u00f6glich ist \u2014 wir geben Ihnen ehrliche Antworten, keinen Sales-Pitch.',
     },
     form: {
       name: 'Name',
       email: 'E-Mail',
       company: 'Unternehmen',
-      service: 'Wonach suchen Sie?',
-      serviceOptions: [
-        'KI-Agenten-Entwicklung',
-        'Prozessautomatisierung',
-        'Web- & App-Entwicklung',
-        'Cortex Framework',
-        'Strategieberatung',
-        'Sonstiges',
-      ],
-      message: 'Erz\u00e4hlen Sie uns von Ihrem Projekt',
+      companyOptional: '(optional)',
+      challenge: 'Was ist Ihre gr\u00f6\u00dfte operative Herausforderung?',
       budget: 'Budgetrahmen',
       budgetOptions: [
-        '< \u20AC10K',
-        '\u20AC10K\u2013\u20AC50K',
-        '\u20AC50K\u2013\u20AC100K',
-        '> \u20AC100K',
-        'Noch unsicher',
+        '< 10.000 \u20ac',
+        '10.000\u201350.000 \u20ac',
+        '50.000\u2013100.000 \u20ac',
+        '> 100.000 \u20ac',
+        'Noch nicht sicher',
       ],
       submit: 'Nachricht senden',
     },
     info: {
       email: 'eni@run4dev.com',
-      location: 'Steinweg 4, 93059 Regensburg, Germany',
-      responseTime: '< 30 Minuten w\u00e4hrend der Gesch\u00e4ftszeiten',
+      location: 'Regensburg, Deutschland',
+      responseTime: 'Wir antworten in der Regel innerhalb von 30 Minuten w\u00e4hrend der Gesch\u00e4ftszeiten',
+      bookCallDirect: 'Oder buchen Sie direkt ein Gespr\u00e4ch',
+    },
+    telegramWaitlist: {
+      headline: 'Suchen Sie einen pers\u00f6nlichen KI-Assistenten?',
+      description: 'Unser Telegram-basierter KI-Agent kommt bald. L\u00e4uft lokal, spricht \u00fcber Telegram mit Ihnen, Ihre Daten bleiben bei Ihnen.',
+      emailPlaceholder: 'ihre@email.de',
+      cta: 'Auf die Warteliste',
     },
   },
   footer: {
@@ -291,25 +308,25 @@ console.log(result.cost.totalCostUsd); // every token tracked`,
   },
   seo: {
     home: {
-      title: 'Run4Dev | KI-Agenten & Prozessautomatisierung | Cortex Framework',
-      description: 'Run4Dev entwickelt intelligente KI-Agenten zur Automatisierung von Gesch\u00e4ftsprozessen. Angetrieben von Cortex, unserem Multi-Provider-Framework. Strategie, Entwicklung, Deployment.',
-      ogTitle: 'Run4Dev \u2014 KI-Agenten, die Ihr Business automatisieren',
+      title: 'Run4Dev | KI-Agenten & Prozessautomatisierung | Deutschland',
+      description: 'Run4Dev entwickelt ma\u00dfgeschneiderte KI-Agenten, die Gesch\u00e4ftsprozesse automatisieren. Kosten senken, Zeit sparen, skalieren ohne einzustellen. Sitz in Regensburg.',
+      ogTitle: 'Run4Dev \u2014 KI-Agenten, die Ihr Unternehmen automatisieren',
     },
-    cortex: {
-      title: 'Cortex Framework | Enterprise KI-Agenten-Orchestrierung | Run4Dev',
-      description: 'Cortex ist ein TypeScript-KI-Agenten-Framework mit Multi-Provider-Support (Claude, GPT, Gemini), hierarchischer Delegation, Kostentracking und Enterprise-Sandboxing.',
+    technology: {
+      title: 'Unsere Technologie | Cortex KI-Engine | Run4Dev',
+      description: 'Cortex ist Run4Devs propriet\u00e4re KI-Engine. Multi-Provider, typsicher, produktionsreif. Die Technologie hinter unseren Automatisierungsl\u00f6sungen.',
     },
-    services: {
-      title: 'KI-Automatisierungsdienste | Individuelle KI-Agenten & Integration | Run4Dev',
-      description: 'KI-Strategieberatung, individuelle Agenten-Entwicklung, Prozessautomatisierung, Systemintegration und Web-/App-Entwicklung. Enterprise-L\u00f6sungen von Run4Dev.',
+    solutions: {
+      title: 'KI-Automatisierungsl\u00f6sungen | Ma\u00dfgeschneiderte KI-Agenten | Run4Dev',
+      description: 'Ma\u00dfgeschneiderte KI-Agenten-Entwicklung, Prozessautomatisierung, Strategieberatung und Webentwicklung. Enterprise-KI-L\u00f6sungen von Run4Dev.',
     },
     about: {
       title: '\u00dcber Run4Dev | KI-Engineering-Team in Deutschland',
-      description: 'Run4Dev ist ein KI- und Software-Engineering-Unternehmen mit Sitz in Regensburg. Entwickler des Cortex-Agenten-Frameworks. Full-Stack-KI-Automatisierung.',
+      description: 'Run4Dev ist ein KI- und Software-Engineering-Unternehmen mit Sitz in Regensburg. Entwickler der Cortex-Engine. Full-Stack KI-Automatisierung.',
     },
     contact: {
-      title: 'Kontakt Run4Dev | Kostenloses KI-Strategiegespr\u00e4ch buchen',
-      description: 'Kontaktieren Sie Run4Dev f\u00fcr KI-Agenten-Entwicklung, Prozessautomatisierung oder ein kostenloses Strategiegespr\u00e4ch. Reaktionszeit unter 30 Minuten. Regensburg.',
+      title: 'Kontakt Run4Dev | Kostenloses KI-Strategiegespr\u00e4ch',
+      description: 'Kontaktieren Sie Run4Dev f\u00fcr KI-Automatisierung, Prozessoptimierung oder ein kostenloses Strategiegespr\u00e4ch. Antwortzeit unter 30 Minuten.',
     },
   },
 };
