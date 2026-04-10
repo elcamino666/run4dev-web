@@ -21,7 +21,7 @@ const t = useTranslations(lang);
   description={t.seo.about.description}
   page="about"
 >
-  <!-- Hero Section (simple gradient, not ParticleHero) -->
+  <!-- Hero Section -->
   <section class="relative py-32 md:py-40 text-center pt-24">
     <div class="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-surface/20 to-bg-primary" aria-hidden="true"></div>
     <div class="relative mx-auto max-w-[1200px] px-6 pt-24">
@@ -34,7 +34,7 @@ const t = useTranslations(lang);
     </div>
   </section>
 
-  <!-- Our Story Section -->
+  <!-- Our Story -->
   <section class="py-24">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-8">
@@ -46,11 +46,11 @@ const t = useTranslations(lang);
     </div>
   </section>
 
-  <!-- What Sets Us Apart Section -->
+  <!-- What Sets Us Apart -->
   <section class="py-24 md:py-32 bg-bg-surface/30">
     <div class="max-w-[1200px] mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
-        What Sets Us Apart
+        {t.about.setsApartHeadline}
       </h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {t.about.differentiators.map((item) => (
@@ -63,7 +63,7 @@ const t = useTranslations(lang);
     </div>
   </section>
 
-  <!-- Company Details Section -->
+  <!-- Company Details -->
   <section class="py-24">
     <div class="max-w-[1200px] mx-auto px-6">
       <div class="max-w-2xl mx-auto">
@@ -97,12 +97,11 @@ const t = useTranslations(lang);
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- CTA -->
   <CTASection
-    headline={t.home.cta.headline}
-    description={t.home.cta.description}
-    buttonText={t.home.cta.button}
+    headline={t.about.cta.headline}
+    description=""
+    buttonText={t.about.cta.button}
     buttonHref={getLocalizedPath(lang, '/contact')}
-    note={t.home.cta.note}
   />
 </BaseLayout>
