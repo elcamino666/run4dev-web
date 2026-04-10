@@ -1,0 +1,51 @@
+---
+interface Props {
+  label: string;
+  headline: string;
+  description: string;
+  points: string[];
+  cta: string;
+  emailPlaceholder: string;
+}
+
+const { label, headline, description, points, cta, emailPlaceholder } = Astro.props;
+---
+
+<div class="bg-gradient-to-br from-bg-surface/40 to-accent/5 border border-border rounded-2xl p-8 md:p-12 text-center scroll-reveal">
+  <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-3">
+    {label}
+  </p>
+  <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-4">
+    {headline}
+  </h2>
+  <p class="text-text-secondary max-w-xl mx-auto mb-6 leading-relaxed">
+    {description}
+  </p>
+  <div class="flex flex-wrap items-center justify-center gap-4 mb-8 text-sm text-text-muted">
+    {points.map((point) => (
+      <span class="flex items-center gap-1.5">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+        {point}
+      </span>
+    ))}
+  </div>
+  <form
+    action={`mailto:eni@run4dev.com?subject=Telegram%20Waitlist`}
+    method="GET"
+    class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto"
+  >
+    <input
+      type="email"
+      name="body"
+      placeholder={emailPlaceholder}
+      required
+      class="w-full sm:flex-1 bg-white border border-border rounded-xl px-4 py-3 text-text-primary placeholder:text-text-muted/50 focus:border-accent focus:outline-none transition-colors"
+    />
+    <button
+      type="submit"
+      class="w-full sm:w-auto px-6 py-3 bg-accent text-white font-semibold rounded-xl transition-all duration-300 hover:bg-accent/90 hover:scale-[1.02] cursor-pointer whitespace-nowrap"
+    >
+      {cta}
+    </button>
+  </form>
+</div>

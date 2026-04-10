@@ -1,0 +1,21 @@
+---
+interface Props {
+  label: string;
+  clientType: string;
+  resultHeadline: string;
+  description: string;
+}
+
+const { label, clientType, resultHeadline, description } = Astro.props;
+---
+
+<div class="bg-bg-surface/30 border border-border rounded-2xl p-8 md:p-10 scroll-reveal">
+  <p class="text-xs font-semibold uppercase tracking-widest text-accent mb-3">
+    {label}
+  </p>
+  <p class="text-sm text-text-muted mb-2">{clientType}</p>
+  <h3 class="text-2xl md:text-3xl font-bold text-text-primary mb-4">
+    {resultHeadline}
+  </h3>
+  <p class="text-text-secondary leading-relaxed">{description}</p>
+</div>
