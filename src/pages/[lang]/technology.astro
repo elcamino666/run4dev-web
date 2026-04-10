@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GlowCard from '../../components/GlowCard.astro';
+import CodeBlock from '../../components/CodeBlock.astro';
+import CTASection from '../../components/CTASection.astro';
+import { useTranslations, getLocalizedPath, type Lang } from '../../i18n';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'it' } },
+  ];
+}
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  title={t.seo.technology.title}
+  description={t.seo.technology.description}
+  page="technology"
+>
+  <!-- Hero Section -->
+  <section class="relative py-32 md:py-40 text-center pt-24">
+    <div class="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-surface/20 to-bg-primary" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-[1200px] px-6 pt-24">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold max-w-4xl mx-auto text-text-primary">
+        {t.technology.hero.h1}
+      </h1>
+      <p class="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mt-6">
+        {t.technology.hero.subtitle}
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center mt-8 gap-4">
+        <a
+          href={getLocalizedPath(lang, '/solutions')}
+          class="bg-bg-dark text-bg-primary px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-bg-dark/90 hover:scale-[1.02]"
+        >
+          {t.technology.hero.ctaPrimary}
+        </a>
+        <a
+          href={getLocalizedPath(lang, '/contact')}
+          class="border border-text-primary text-text-primary px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-bg-dark hover:text-bg-primary"
+        >
+          {t.technology.hero.ctaSecondary}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why It Matters -->
+  <section class="py-24 md:py-32">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
+        {t.technology.whyItMatters.headline}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {t.technology.whyItMatters.cards.map((card) => (
+          <GlowCard>
+            <h3 class="text-lg font-semibold text-text-primary mb-3">{card.title}</h3>
+            <p class="text-text-secondary">{card.description}</p>
+          </GlowCard>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Under the Hood -->
+  <section class="py-24 bg-bg-surface/30">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
+        {t.technology.underTheHood.headline}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {t.technology.underTheHood.features.map((feature) => (
+          <div class="scroll-reveal">
+            <h3 class="text-sm font-semibold text-text-primary mb-1">{feature.title}</h3>
+            <p class="text-sm text-text-muted">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Code Example -->
+  <section class="py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
+        {t.technology.codeExample.headline}
+      </h2>
+      <CodeBlock code={t.technology.codeExample.code} title="cortex-agent.ts" />
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="py-24 md:py-32">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
+        {t.technology.useCases.headline}
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {t.technology.useCases.items.map((useCase) => (
+          <GlowCard>
+            <h3 class="text-xl font-semibold text-text-primary mb-3">{useCase.title}</h3>
+            <p class="text-text-secondary">{useCase.description}</p>
+          </GlowCard>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTASection
+    headline={t.technology.cta.headline}
+    description=""
+    buttonText={t.technology.cta.button}
+    buttonHref={getLocalizedPath(lang, '/contact')}
+  />
+</BaseLayout>
