@@ -2,7 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import GlowCard from '../../components/GlowCard.astro';
 import ContactForm from '../../components/ContactForm.astro';
-import { useTranslations, type Lang } from '../../i18n';
+import TelegramTeaser from '../../components/TelegramTeaser.astro';
+import { useTranslations, getLocalizedPath, type Lang } from '../../i18n';
 
 export function getStaticPaths() {
   return [
@@ -21,7 +22,7 @@ const t = useTranslations(lang);
   description={t.seo.contact.description}
   page="contact"
 >
-  <!-- Hero Section (simple gradient) -->
+  <!-- Hero Section -->
   <section class="relative py-32 md:py-40 text-center pt-24">
     <div class="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-surface/20 to-bg-primary" aria-hidden="true"></div>
     <div class="relative mx-auto max-w-[1200px] px-6 pt-24">
@@ -34,14 +35,49 @@ const t = useTranslations(lang);
     </div>
   </section>
 
-  <!-- Contact Content Section -->
+  <!-- Contact Content: Form + Info -->
   <section class="py-24">
     <div class="max-w-[1200px] mx-auto px-6">
-      <div class="max-w-3xl mx-auto">
-        <GlowCard>
-          <ContactForm />
-        </GlowCard>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <!-- Left: Form (2/3 width) -->
+        <div class="md:col-span-2">
+          <GlowCard>
+            <ContactForm />
+          </GlowCard>
+        </div>
+
+        <!-- Right: Info (1/3 width) -->
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-sm font-semibold text-text-muted uppercase tracking-wider mb-3">Email</h3>
+            <a href={`mailto:${t.contact.info.email}`} class="text-accent hover:underline text-lg">
+              {t.contact.info.email}
+            </a>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-text-muted uppercase tracking-wider mb-3">Location</h3>
+            <p class="text-text-secondary text-lg">{t.contact.info.location}</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-semibold text-text-muted uppercase tracking-wider mb-3">Response Time</h3>
+            <p class="text-text-secondary">{t.contact.info.responseTime}</p>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Telegram Waitlist -->
+  <section class="py-24">
+    <div class="max-w-[800px] mx-auto px-6">
+      <TelegramTeaser
+        label={t.contact.telegramWaitlist.headline}
+        headline={t.contact.telegramWaitlist.headline}
+        description={t.contact.telegramWaitlist.description}
+        points={[]}
+        cta={t.contact.telegramWaitlist.cta}
+        emailPlaceholder={t.contact.telegramWaitlist.emailPlaceholder}
+      />
     </div>
   </section>
 </BaseLayout>
