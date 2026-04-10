@@ -1,8 +1,8 @@
 export interface SiteContent {
   nav: {
     home: string;
-    cortex: string;
-    services: string;
+    solutions: string;
+    technology: string;
     about: string;
     contact: string;
     bookCall: string;
@@ -15,17 +15,32 @@ export interface SiteContent {
       ctaSecondary: string;
     };
     trustBar: string[];
-    valueProposition: {
+    painSolution: {
       headline: string;
       description: string;
-      cards: Array<{ title: string; description: string; }>;
+      cards: Array<{ title: string; description: string }>;
+    };
+    caseStudy: {
+      label: string;
+      headline: string;
+      clientType: string;
+      resultHeadline: string;
+      description: string;
     };
     metricsHeadline: string;
-    metrics: Array<{ value: string; suffix: string; label: string; }>;
+    metrics: Array<{ value: string; suffix: string; label: string }>;
     howItWorks: {
       headline: string;
       subtitle: string;
-      steps: Array<{ title: string; description: string; }>;
+      steps: Array<{ title: string; description: string }>;
+    };
+    telegramTeaser: {
+      label: string;
+      headline: string;
+      description: string;
+      points: string[];
+      cta: string;
+      emailPlaceholder: string;
     };
     cta: {
       headline: string;
@@ -34,16 +49,20 @@ export interface SiteContent {
       note: string;
     };
   };
-  cortex: {
+  technology: {
     hero: {
       h1: string;
       subtitle: string;
       ctaPrimary: string;
       ctaSecondary: string;
     };
-    features: {
+    whyItMatters: {
       headline: string;
-      items: Array<{ title: string; description: string; }>;
+      cards: Array<{ title: string; description: string }>;
+    };
+    underTheHood: {
+      headline: string;
+      features: Array<{ title: string; description: string }>;
     };
     codeExample: {
       headline: string;
@@ -51,21 +70,30 @@ export interface SiteContent {
     };
     useCases: {
       headline: string;
-      items: Array<{ title: string; description: string; }>;
+      items: Array<{ title: string; description: string }>;
+    };
+    cta: {
+      headline: string;
+      button: string;
     };
   };
-  services: {
+  solutions: {
     hero: {
       h1: string;
       subtitle: string;
     };
-    deliverablesLabel: string;
     items: Array<{
+      pain: string;
       title: string;
       description: string;
+      result: string;
       deliverables: string;
-      imageAlt: string;
     }>;
+    cta: {
+      headline: string;
+      description: string;
+      button: string;
+    };
   };
   about: {
     hero: {
@@ -76,6 +104,7 @@ export interface SiteContent {
       headline: string;
       content: string;
     };
+    setsApartHeadline: string;
     differentiators: Array<{
       title: string;
       description: string;
@@ -87,6 +116,10 @@ export interface SiteContent {
       technology: string;
       email: string;
     };
+    cta: {
+      headline: string;
+      button: string;
+    };
   };
   contact: {
     hero: {
@@ -97,9 +130,8 @@ export interface SiteContent {
       name: string;
       email: string;
       company: string;
-      service: string;
-      serviceOptions: string[];
-      message: string;
+      companyOptional: string;
+      challenge: string;
       budget: string;
       budgetOptions: string[];
       submit: string;
@@ -108,6 +140,13 @@ export interface SiteContent {
       email: string;
       location: string;
       responseTime: string;
+      bookCallDirect: string;
+    };
+    telegramWaitlist: {
+      headline: string;
+      description: string;
+      emailPlaceholder: string;
+      cta: string;
     };
   };
   footer: {
@@ -115,10 +154,10 @@ export interface SiteContent {
     imprint: string;
   };
   seo: {
-    home: { title: string; description: string; ogTitle: string; };
-    cortex: { title: string; description: string; };
-    services: { title: string; description: string; };
-    about: { title: string; description: string; };
-    contact: { title: string; description: string; };
+    home: { title: string; description: string; ogTitle: string };
+    technology: { title: string; description: string };
+    solutions: { title: string; description: string };
+    about: { title: string; description: string };
+    contact: { title: string; description: string };
   };
 }
