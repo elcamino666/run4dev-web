@@ -3,133 +3,133 @@ import type { SiteContent } from './types';
 export const it: SiteContent = {
   nav: {
     home: 'Home',
-    cortex: 'Cortex Framework',
-    services: 'Servizi',
+    solutions: 'Soluzioni',
+    technology: 'Tecnologia',
     about: 'Chi Siamo',
     contact: 'Contatti',
-    bookCall: 'Prenota una Consulenza',
+    bookCall: 'Prenota una Call',
   },
   home: {
     hero: {
-      h1: 'Creiamo Agenti IA che Automatizzano i Tuoi Processi Aziendali',
-      subtitle: 'Run4Dev progetta sistemi IA intelligenti che gestiscono i workflow ripetitivi, riducono i costi operativi e permettono al tuo team di concentrarsi su ci\u00f2 che conta. Alimentato dal nostro framework proprietario Cortex.',
+      h1: 'Il Tuo Team Perde Tempo in Attivit\u00e0 che l\u2019IA Dovrebbe Gestire',
+      subtitle: 'Creiamo agenti IA personalizzati che si occupano dei workflow ripetitivi, riducono i costi operativi e lasciano al tuo team lo spazio per crescere.',
       ctaPrimary: 'Prenota una Consulenza Gratuita',
-      ctaSecondary: 'Scopri Cortex in Azione',
+      ctaSecondary: 'Scopri le Nostre Soluzioni',
     },
     trustBar: [
-      'Tempo di risposta: < 30 min',
       'Sede in Germania',
       'Sicurezza enterprise',
-      'IA multi-provider',
+      '< 30 min di risposta',
+      'Conforme al GDPR',
     ],
-    valueProposition: {
-      headline: 'Automazione Intelligente con ROI Reale',
-      description: 'La maggior parte delle aziende spreca il 40% del tempo dei dipendenti in attivit\u00e0 che l\u2019IA pu\u00f2 gestire. Il nostro framework Cortex implementa agenti IA specializzati che lavorano 24/7 senza errori, su processi che prima rallentavano il tuo team.',
+    painSolution: {
+      headline: 'Il Tuo Team Merita di Meglio del Lavoro Ripetitivo',
+      description: 'Le aziende sprecano il 40% del tempo dei dipendenti in attivit\u00e0 che l\u2019IA gestisce meglio. Implementiamo agenti che lavorano 24/7 senza errori.',
       cards: [
         {
-          title: 'Sviluppo Agenti IA',
-          description: 'Agenti IA personalizzati per i tuoi workflow specifici. Dal servizio clienti all\u2019elaborazione dati, i nostri agenti si integrano con i tuoi strumenti esistenti e apprendono la tua logica aziendale.',
+          title: 'Basta Perdere Tempo nel Lavoro Manuale',
+          description: 'Creiamo agenti IA su misura per i tuoi workflow. Supporto clienti, elaborazione dati, reportistica \u2014 gestiti automaticamente.',
         },
         {
-          title: 'Automazione dei Processi',
-          description: 'Automazione end-to-end dei processi aziendali ripetitivi. Analizziamo le tue operazioni, identifichiamo i colli di bottiglia e implementiamo soluzioni IA che scalano con la tua crescita.',
+          title: 'Riduci i Costi Operativi',
+          description: 'Automazione dei processi end-to-end che connette i tuoi sistemi esistenti. Niente pi\u00f9 trasferimento manuale di dati.',
         },
         {
-          title: 'Cortex Framework',
-          description: 'Il nostro motore open-source di orchestrazione agenti. Multi-provider (Claude, GPT, Gemini), monitoraggio costi integrato, delegazione gerarchica degli agenti e sandboxing enterprise.',
+          title: 'Scala Senza Assumere',
+          description: 'Agenti IA che crescono con la tua azienda. Gestisci 10 volte il carico di lavoro senza aggiungere personale.',
         },
       ],
+    },
+    caseStudy: {
+      label: 'Risultati Reali',
+      headline: 'Cosa Abbiamo Costruito',
+      clientType: 'Un\u2019azienda di workforce management',
+      resultHeadline: 'Tempo operativo manuale ridotto dell\u201980%',
+      description: 'Agenti IA specializzati per la gestione degli incarichi, dei lavoratori e delle operazioni quotidiane su una piattaforma multi-tenant. Processi che richiedevano ore ora si completano in minuti. Il tracking dei costi in tempo reale garantisce prevedibilit\u00e0 del budget.',
     },
     metricsHeadline: 'Risultati Provati, Impatto Misurabile',
     metrics: [
-      { value: '10', suffix: 'x', label: 'Esecuzione processi pi\u00f9 veloce rispetto ai workflow manuali' },
-      { value: '60', suffix: '%', label: 'Riduzione media dei costi per i processi automatizzati' },
-      { value: '24/7', suffix: '', label: 'Gli agenti IA lavorano senza sosta, zero tempi di inattivit\u00e0' },
-      { value: '3', suffix: '+', label: 'Provider IA supportati (Claude, GPT, Gemini)' },
+      { value: '10', suffix: 'x', label: 'Esecuzione processi pi\u00f9 veloce' },
+      { value: '60', suffix: '%', label: 'Riduzione media dei costi' },
+      { value: '24/7', suffix: '', label: 'Agenti IA sempre attivi' },
+      { value: '80', suffix: '%', label: 'Meno lavoro manuale per il tuo team' },
     ],
     howItWorks: {
-      headline: 'Dall\u2019Idea all\u2019Agente IA Operativo in 4 Step',
+      headline: 'Dall\u2019Idea all\u2019Agente IA in 4 Passi',
       subtitle: 'Come Funziona',
       steps: [
         {
-          title: 'Discovery',
-          description: 'Analizziamo le tue operazioni, identifichiamo le opportunit\u00e0 di automazione con il ROI pi\u00f9 alto e mappiamo i processi che gli agenti IA possono gestire.',
+          title: 'Analisi',
+          description: 'Analizziamo le tue operazioni e troviamo le opportunit\u00e0 di automazione con il ROI pi\u00f9 alto.',
         },
         {
-          title: 'Architettura',
-          description: 'I nostri ingegneri progettano il sistema di agenti con Cortex\u2014definendo strumenti, catene di delegazione e strategia provider su misura per le tue esigenze.',
+          title: 'Progettazione',
+          description: 'Progettiamo il sistema di agenti IA su misura per le tue esigenze.',
         },
         {
           title: 'Sviluppo & Test',
-          description: 'Sviluppiamo, testiamo in sandbox e iteriamo. Ogni agente viene validato su scenari reali prima del deployment, con controlli di costo integrati.',
+          description: 'Sviluppiamo, testiamo e validiamo su scenari reali.',
         },
         {
           title: 'Deploy & Ottimizzazione',
-          description: 'Gli agenti vanno live con monitoraggio real-time, tracking dei costi e ottimizzazione continua. Vedrai risultati dal primo giorno.',
+          description: 'I tuoi agenti vanno in produzione con monitoraggio e miglioramento continuo.',
         },
       ],
     },
+    telegramTeaser: {
+      label: 'In Arrivo',
+      headline: 'Il Tuo Assistente IA Personale su Telegram',
+      description: 'Un assistente IA completo che gira localmente sul tuo computer. Chatta su Telegram. Pu\u00f2 programmare, cercare, gestire file, automatizzare attivit\u00e0 \u2014 tutto ci\u00f2 che ti serve. I tuoi dati non lasciano mai il tuo dispositivo.',
+      points: ['Gira localmente', 'Interfaccia Telegram', 'I tuoi dati restano tuoi'],
+      cta: 'Iscriviti alla Lista d\u2019Attesa',
+      emailPlaceholder: 'tua@email.it',
+    },
     cta: {
-      headline: 'Pronto per l\u2019Automazione? Parliamone.',
-      description: 'Prenota una sessione strategica gratuita di 30 minuti. Identificheremo le tue 3 migliori opportunit\u00e0 di automazione e ti mostreremo il ROI atteso.',
+      headline: 'Pronto ad Automatizzare?',
+      description: 'Prenota una sessione strategica gratuita di 30 minuti. Identificheremo le tue migliori opportunit\u00e0 di automazione e ti mostreremo il ROI atteso.',
       button: 'Prenota la Tua Consulenza Gratuita',
       note: 'Tempo medio di risposta: 32 minuti',
     },
   },
-  cortex: {
+  technology: {
     hero: {
-      h1: 'Cortex: Il Framework per Agenti IA Progettato per l\u2019Automazione Enterprise',
-      subtitle: 'Un motore di orchestrazione TypeScript-first che ti permette di definire, distribuire e gestire agenti IA intelligenti su pi\u00f9 provider. Setup zero-config. Monitoraggio costi integrato. Sandboxing enterprise.',
-      ctaPrimary: 'Inizia con Cortex',
-      ctaSecondary: 'Visualizza Documentazione',
+      h1: 'Costruito su Tecnologia che Abbiamo Ingegnerizzato da Zero',
+      subtitle: 'Il nostro motore proprietario Cortex \u00e8 il motivo per cui le nostre soluzioni IA funzionano in produzione \u2014 non solo nelle demo.',
+      ctaPrimary: 'Scopri le Nostre Soluzioni',
+      ctaSecondary: 'Parla con il Nostro Team',
     },
-    features: {
-      headline: 'Tutto ci\u00f2 di cui hai bisogno per costruire Agenti IA di produzione',
-      items: [
+    whyItMatters: {
+      headline: 'Perch\u00e9 \u00c8 Importante per Te',
+      cards: [
         {
-          title: 'Intelligenza Multi-Provider',
-          description: 'Passa senza interruzioni tra Claude, GPT e Gemini\u2014o usali insieme. Un unico codebase, qualsiasi LLM. Il Model Registry centralizzato configura i provider automaticamente.',
+          title: 'I tuoi agenti non si rompono in produzione',
+          description: 'Cortex \u00e8 type-safe e testato sul campo. Gestione errori integrata, sandboxing e logica di retry \u2014 i tuoi agenti IA gestiscono i casi limite con grazia.',
         },
         {
-          title: 'Delegazione Gerarchica degli Agenti',
-          description: 'Costruisci agenti orchestratore che delegano automaticamente ad agenti sub-specializzati. Ogni agente ha i propri strumenti, prompt di sistema e modello.',
+          title: 'Non sei mai vincolato a un solo provider IA',
+          description: 'Cortex funziona con Claude, GPT, Gemini e altri. Se un provider alza i prezzi o va gi\u00f9, switchiamo senza ricostruire nulla.',
         },
         {
-          title: 'Sistema di Contesto Tipizzato',
-          description: 'Definisci il tuo contesto aziendale una volta con i generics TypeScript. Ogni agente, strumento e prompt builder ottiene la piena sicurezza dei tipi.',
-        },
-        {
-          title: 'Scoperta Strumenti Differita',
-          description: 'Gli agenti non necessitano di 100 strumenti caricati contemporaneamente. L\u2019albero gerarchico delle categorie di Cortex permette agli agenti di cercare e attivare strumenti su richiesta.',
-        },
-        {
-          title: 'Sandbox per Script',
-          description: 'Gli agenti IA possono scrivere ed eseguire JavaScript in una sandbox sicura Worker Thread. Limiti di memoria, timeout e limiti di chiamate strumenti prevengono script fuori controllo.',
-        },
-        {
-          title: 'Monitoraggio Costi Real-Time',
-          description: 'Ogni token viene tracciato. Ogni chiamata API ha un prezzo. Ottieni breakdown dei costi per agente e modello, incluso il prompt caching.',
-        },
-        {
-          title: 'Streaming & SSE',
-          description: 'Server-Sent Events integrati per lo streaming real-time verso il tuo frontend. Visualizza il ragionamento dell\u2019agente, le esecuzioni degli strumenti e i risultati in tempo reale.',
-        },
-        {
-          title: 'UI di Debug',
-          description: 'Debug visuale con event bus integrato. Traccia le esecuzioni degli agenti, ispeziona le chiamate strumenti e analizza i costi in una dashboard live.',
-        },
-        {
-          title: 'Human-in-the-Loop',
-          description: 'I flussi di conferma permettono agli agenti di fermarsi e richiedere approvazione umana prima di eseguire azioni sensibili. Ripresa senza interruzioni dopo la conferma.',
-        },
-        {
-          title: 'Lifecycle Hooks',
-          description: 'Utilizza gli hook onRoundComplete, onToolCall, onComplete e onError. Costruisci logging personalizzato, alerting o analytics su ogni interazione degli agenti.',
+          title: 'Vedi esattamente per cosa paghi',
+          description: 'Ogni chiamata IA \u00e8 tracciata fino al singolo token. Dashboard dei costi in tempo reale \u2014 nessuna sorpresa in fattura.',
         },
       ],
     },
+    underTheHood: {
+      headline: 'Sotto il Cofano',
+      features: [
+        { title: 'Delegazione Gerarchica degli Agenti', description: 'Gli agenti orchestratori delegano automaticamente a sub-agenti specializzati.' },
+        { title: 'Esecuzione Codice in Sandbox', description: 'Gli agenti IA eseguono script in ambienti isolati con limiti di memoria e timeout.' },
+        { title: 'Streaming in Tempo Reale', description: 'Server-Sent Events per il reasoning live degli agenti e l\u2019esecuzione dei tool.' },
+        { title: 'Controllo Accessi Basato sui Ruoli', description: 'Tool e azioni filtrati per ruoli utente e permessi.' },
+        { title: 'Human-in-the-Loop', description: 'Gli agenti si fermano per l\u2019approvazione umana prima di operazioni sensibili.' },
+        { title: 'Lifecycle Hooks', description: 'Accesso a ogni evento degli agenti per logging personalizzato, alerting o analytics.' },
+        { title: 'Dashboard di Debug', description: 'Debug visuale con tracing degli eventi live e analisi dei costi.' },
+        { title: 'Ottimizzazione Costi Multi-Modello', description: 'Selezione automatica del provider in base alla complessit\u00e0 del task e al budget.' },
+      ],
+    },
     codeExample: {
-      headline: 'Operativo in meno di 10 righe',
+      headline: 'API Pulita, Motore Potente',
       code: `import { createCortex, Model } from "@run4dev/cortex";
 
 const { defineAgent, defineTool, createRuntime } = createCortex<{
@@ -146,170 +146,187 @@ const agent = defineAgent({
   subAgents: [billingAgent, escalationAgent],
 });
 
-const runtime = createRuntime(); // zero-config, auto-resolves providers
+const runtime = createRuntime();
 const result = await runtime.run({
   agent,
   messages,
   context: { userId: "u_123", role: "admin" },
 });
-console.log(result.cost.totalCostUsd); // every token tracked`,
+console.log(result.cost.totalCostUsd);`,
     },
     useCases: {
-      headline: 'Cosa costruiscono i team con Cortex',
+      headline: 'Cosa Costruiscono i Team con Cortex',
       items: [
         {
-          title: 'Automazione Servizio Clienti',
-          description: 'Agenti che risolvono ticket, cercano nelle basi di conoscenza ed escalano problemi complessi\u2014tempi di risposta ridotti dell\u201980%.',
+          title: 'Automazione Supporto Clienti',
+          description: 'Risolvi i ticket l\u201980% pi\u00f9 velocemente con agenti che cercano nelle knowledge base e scalano intelligentemente.',
         },
         {
           title: 'Pipeline di Elaborazione Dati',
-          description: 'Agenti che estraggono, trasformano, validano e instradano dati tra sistemi. Human-in-the-loop per le eccezioni.',
+          description: 'Zero gestione manuale dei dati. Gli agenti estraggono, trasformano, validano e instradano i dati tra i sistemi.',
         },
         {
           title: 'Operazioni Interne',
-          description: 'Onboarding HR, helpdesk IT, gestione inventario\u2014ogni processo interno ripetitivo diventa un workflow di agenti.',
+          description: 'Automatizza i workflow di onboarding HR, helpdesk IT e gestione inventario.',
         },
         {
-          title: 'Logica Aziendale Multi-Step',
-          description: 'Agenti orchestratore che coordinano sub-agenti specializzati per catene di approvazione complesse, controlli di conformit\u00e0 e reportistica.',
+          title: 'Logica di Business Complessa',
+          description: 'Orchestra catene di approvazione multi-step, verifiche di compliance e reportistica automatizzata.',
         },
       ],
     },
-  },
-  services: {
-    hero: {
-      h1: 'Servizi di Automazione IA che Scalano con la Tua Azienda',
-      subtitle: 'Dalla consulenza strategica al deployment completo degli agenti: forniamo tutto ci\u00f2 che serve per trasformare i processi manuali in workflow intelligenti e automatizzati.',
+    cta: {
+      headline: 'Vuoi Vedere Come Funzionerebbe per Te?',
+      button: 'Prenota una Consulenza Strategica',
     },
-    deliverablesLabel: 'Cosa ottieni:',
+  },
+  solutions: {
+    hero: {
+      h1: 'Ogni Azienda Ha Processi Che Non Dovrebbero Richiedere Persone',
+      subtitle: 'Troviamo i colli di bottiglia che rubano tempo al tuo team e li sostituiamo con agenti IA che lavorano pi\u00f9 velocemente, a minor costo e senza sosta.',
+    },
     items: [
       {
-        title: 'Strategia IA & Consulenza',
-        description: 'Non sai da dove iniziare? Analizziamo le tue operazioni, mappiamo le opportunit\u00e0 di automazione e creiamo una roadmap prioritizzata con proiezioni ROI chiare per ogni iniziativa.',
-        deliverables: 'Report di audit dei processi, matrice opportunit\u00e0 di automazione, proiezioni ROI, roadmap di implementazione, raccomandazione technology stack.',
-        imageAlt: 'Due professionisti che esaminano un dashboard dati olografico',
-      },
-      {
+        pain: 'Il tuo team affoga in attivit\u00e0 ripetitive',
         title: 'Sviluppo Agenti IA Personalizzati',
-        description: 'Progettiamo e costruiamo agenti IA su misura per la tua logica aziendale. Con il nostro framework Cortex, ogni agente \u00e8 costruito con gli strumenti giusti, il modello giusto e le giuste protezioni.',
-        deliverables: 'Architettura agente personalizzata, sviluppo strumenti, ottimizzazione provider, suite di test, configurazione deployment, documentazione.',
-        imageAlt: 'Sviluppatore al lavoro sul codice con visualizzazione agente IA sullo schermo',
+        description: 'Creiamo agenti su misura per i tuoi workflow \u2014 supporto clienti, elaborazione dati, reporting, operations. Ogni agente \u00e8 costruito con gli strumenti giusti e le giuste protezioni.',
+        result: 'I team recuperano 20+ ore a settimana',
+        deliverables: 'Architettura agenti custom, sviluppo tool, suite di test, deployment, documentazione.',
       },
       {
+        pain: 'I tuoi sistemi non comunicano tra loro',
         title: 'Automazione Processi & Integrazione',
-        description: 'Connettiamo i tuoi agenti IA ai tuoi sistemi esistenti\u2014CRM, ERP, database, API, strumenti di comunicazione. Automazione end-to-end dal trigger all\u2019azione, con supervisione umana dove necessario.',
-        deliverables: 'Integrazione sistemi, connettori API, automazione workflow, dashboard di monitoraggio, avvisi, garanzie SLA.',
-        imageAlt: 'Hub Cortex centrale connesso a icone di strumenti aziendali comuni',
+        description: 'Connettiamo i tuoi agenti IA ai sistemi esistenti \u2014 CRM, ERP, database, API, strumenti di comunicazione. Automazione end-to-end con supervisione umana dove serve.',
+        result: 'Zero trasferimento manuale di dati tra sistemi',
+        deliverables: 'Integrazione sistemi, connettori API, automazione workflow, dashboard di monitoraggio.',
       },
       {
+        pain: 'Non sai da dove iniziare con l\u2019IA',
+        title: 'Strategia IA & Consulenza',
+        description: 'Analizziamo le tue operazioni, mappiamo le opportunit\u00e0 di automazione e creiamo una roadmap prioritizzata con proiezioni ROI chiare. Senza impegno.',
+        result: 'Piano chiaro con proiezione ROI prima di spendere un euro',
+        deliverables: 'Report audit processi, matrice opportunit\u00e0, proiezioni ROI, roadmap di implementazione.',
+      },
+      {
+        pain: 'Hai bisogno di pi\u00f9 della sola IA',
         title: 'Sviluppo Web & App',
-        description: 'Oltre all\u2019IA, costruiamo i prodotti digitali di cui la tua azienda ha bisogno. Applicazioni web personalizzate, app mobile e dashboard\u2014tutto progettato per performance, scalabilit\u00e0 e esperienza utente eccezionale.',
-        deliverables: 'Sviluppo full-stack web/mobile, design UI/UX, sviluppo API, deployment cloud, manutenzione continua.',
-        imageAlt: 'Mockup moderni di web e mobile app su dispositivi multipli',
+        description: 'Oltre all\u2019IA, costruiamo i prodotti digitali di cui la tua azienda ha bisogno. Applicazioni web, app mobile, dashboard \u2014 progettati per performance e user experience eccezionale.',
+        result: 'Un team, dall\u2019inizio alla fine \u2014 niente giocoleria tra fornitori',
+        deliverables: 'Sviluppo full-stack web/mobile, design UI/UX, sviluppo API, deployment cloud.',
       },
       {
+        pain: 'Deve continuare a funzionare dopo il lancio',
         title: 'Supporto Continuo & Ottimizzazione',
-        description: 'Gli agenti IA migliorano nel tempo. Monitoriamo le performance, ottimizziamo i costi, rialleniamo su nuovi dati e facciamo evolvere i tuoi agenti mentre la tua azienda cresce.',
-        deliverables: 'Monitoraggio 24/7, report di ottimizzazione costi, revisioni strategiche trimestrali, supporto prioritario, upgrade agenti.',
-        imageAlt: 'Dashboard di monitoraggio performance con metriche di ottimizzazione',
+        description: 'Gli agenti IA migliorano nel tempo. Monitoriamo le performance, ottimizziamo i costi e facciamo evolvere i tuoi agenti mentre la tua azienda cresce.',
+        result: 'IA che migliora nel tempo, non che diventa obsoleta',
+        deliverables: 'Monitoraggio, report ottimizzazione costi, revisioni trimestrali, supporto prioritario, upgrade agenti.',
       },
     ],
+    cta: {
+      headline: 'Non Sei Sicuro Quale Soluzione Fa per Te?',
+      description: 'Prenota una consulenza gratuita e lo scopriamo insieme.',
+      button: 'Prenota la Tua Consulenza Gratuita',
+    },
   },
   about: {
     hero: {
-      h1: 'Il Team Dietro gli Agenti IA',
-      intro: 'Run4Dev \u00e8 un\u2019azienda di ingegneria software con sede a Regensburg, Germania. Abbiamo iniziato costruendo web e mobile app\u2014ed eravamo bravi. Poi abbiamo visto quanto tempo le aziende sprecavano in processi che l\u2019IA poteva automatizzare in pochi secondi. Cos\u00ec abbiamo costruito Cortex.',
+      h1: 'Non Volevamo Costruire un Framework IA',
+      intro: 'Stavamo risolvendo problemi reali dei clienti \u2014 time tracking, workforce management, operations \u2014 quando ci siamo resi conto che continuavamo a ricostruire la stessa infrastruttura per agenti. Cos\u00ec abbiamo creato Cortex.',
     },
     story: {
       headline: 'La Nostra Storia',
-      content: 'Non ci eravamo proposti di costruire un framework IA. Stavamo risolvendo problemi reali dei clienti\u2014rilevazione presenze, gestione del personale, operazioni\u2014quando ci siamo resi conto che continuavamo a ricostruire la stessa infrastruttura per agenti. Cortex \u00e8 nato da quella frustrazione. Un framework pulito, tipizzato e multi-provider che gestisce le parti difficili per permetterti di concentrarti sulla logica aziendale.\n\nOggi Cortex alimenta tutti i nostri progetti di automazione, e lo stiamo rendendo disponibile alle aziende che vogliono muoversi velocemente senza reinventare la ruota.',
+      content: 'Non volevamo costruire un framework IA. Stavamo risolvendo problemi reali dei clienti \u2014 time tracking, workforce management, operations \u2014 quando ci siamo resi conto che continuavamo a ricostruire la stessa infrastruttura per agenti. Cortex \u00e8 nato da quella frustrazione. Un motore pulito, tipizzato, multi-provider che gestisce le parti difficili cos\u00ec possiamo concentrarci sulla logica di business.\n\nOggi Cortex alimenta ogni progetto di automazione che realizziamo. E stiamo costruendo qualcosa di nuovo \u2014 un assistente IA personale che gira localmente e parla con te su Telegram. Perch\u00e9 crediamo che tutti meritino un\u2019IA che lavori per loro, non il contrario.',
     },
+    setsApartHeadline: 'Cosa Ci Distingue',
     differentiators: [
       {
-        title: 'Costruiamo ci\u00f2 che vendiamo.',
-        description: 'Cortex non \u00e8 un esercizio di marketing\u2014\u00e8 lo stesso framework che usiamo in ogni progetto. Ogni funzionalit\u00e0 \u00e8 nata da una reale esigenza produttiva.',
+        title: 'Usiamo ci\u00f2 che vendiamo.',
+        description: 'Cortex gira in produzione ogni giorno su progetti reali dei clienti. Ogni feature esiste perch\u00e9 un progetto reale ne aveva bisogno.',
       },
       {
         title: 'Ingegneria tedesca, portata globale.',
-        description: 'Sede in Germania con standard enterprise per sicurezza, affidabilit\u00e0 e privacy dei dati. Serviamo clienti in tutto il mondo.',
+        description: 'Sede a Regensburg con standard enterprise per sicurezza, affidabilit\u00e0 e privacy dei dati. Conforme al GDPR fin dall\u2019inizio.',
       },
       {
-        title: 'Competenza full-stack.',
-        description: 'Non facciamo solo IA. Costruiamo le web app, le API, le integrazioni e l\u2019infrastruttura attorno. Un team, dall\u2019inizio alla fine.',
+        title: 'Un team, dall\u2019inizio alla fine.',
+        description: 'Non facciamo solo IA. Costruiamo le web app, le API, le integrazioni e l\u2019infrastruttura intorno ad essa.',
       },
       {
-        title: 'Prezzi trasparenti.',
-        description: 'Il nostro monitoraggio dei costi non \u00e8 solo per i clienti\u2014\u00e8 integrato in Cortex. Vedi esattamente quanto costa ogni esecuzione di un agente, fino al singolo token.',
+        title: 'Trasparenti dal primo giorno.',
+        description: 'Il tracking dei costi in tempo reale non \u00e8 solo una feature che vendiamo \u2014 \u00e8 come gestiamo ogni progetto. Sai sempre per cosa stai pagando.',
       },
     ],
     company: {
       name: 'Run4Dev',
-      location: 'Steinweg 4, 93059 Regensburg, Germany',
+      location: 'Steinweg 4, 93059 Regensburg, Germania',
       focus: 'Sviluppo Agenti IA, Automazione Processi, Sviluppo Web & App',
-      technology: 'Cortex Framework (TypeScript, Node.js)',
+      technology: 'Cortex Engine (TypeScript, Node.js)',
       email: 'eni@run4dev.com',
+    },
+    cta: {
+      headline: 'Pronto a Lavorare con Noi?',
+      button: 'Contattaci',
     },
   },
   contact: {
     hero: {
-      h1: 'Creiamo Qualcosa di Straordinario',
-      subtitle: 'Pronto ad automatizzare i tuoi processi aziendali con l\u2019IA? Che tu abbia un progetto chiaro in mente o voglia semplicemente esplorare le possibilit\u00e0, ci farebbe piacere sentirti.',
+      h1: 'Scopriamo Cosa l\u2019IA Pu\u00f2 Fare per Te',
+      subtitle: 'Che tu abbia un progetto specifico in mente o voglia solo esplorare le possibilit\u00e0 \u2014 ti diamo risposte oneste, non un pitch di vendita.',
     },
     form: {
       name: 'Nome',
       email: 'Email',
       company: 'Azienda',
-      service: 'Cosa cerchi?',
-      serviceOptions: [
-        'Sviluppo Agenti IA',
-        'Automazione Processi',
-        'Sviluppo Web & App',
-        'Framework Cortex',
-        'Consulenza Strategica',
-        'Altro',
-      ],
-      message: 'Raccontaci del tuo progetto',
+      companyOptional: '(opzionale)',
+      challenge: 'Qual \u00e8 la tua sfida operativa pi\u00f9 grande?',
       budget: 'Range di budget',
       budgetOptions: [
-        '< \u20AC10K',
-        '\u20AC10K\u2013\u20AC50K',
-        '\u20AC50K\u2013\u20AC100K',
-        '> \u20AC100K',
+        '< 10.000 \u20ac',
+        '10.000\u201350.000 \u20ac',
+        '50.000\u2013100.000 \u20ac',
+        '> 100.000 \u20ac',
         'Non ancora sicuro',
       ],
       submit: 'Invia Messaggio',
     },
     info: {
       email: 'eni@run4dev.com',
-      location: 'Steinweg 4, 93059 Regensburg, Germany',
-      responseTime: '< 30 minuti durante l\u2019orario lavorativo',
+      location: 'Regensburg, Germania',
+      responseTime: 'Rispondiamo generalmente entro 30 minuti durante l\u2019orario lavorativo',
+      bookCallDirect: 'Oppure prenota una call direttamente',
+    },
+    telegramWaitlist: {
+      headline: 'Cerchi un Assistente IA Personale?',
+      description: 'Il nostro agente IA su Telegram arriva presto. Gira localmente, parla con te su Telegram, i tuoi dati restano tuoi.',
+      emailPlaceholder: 'tua@email.it',
+      cta: 'Iscriviti alla Lista d\u2019Attesa',
     },
   },
   footer: {
-    privacy: 'Privacy Policy',
-    imprint: 'Imprint',
+    privacy: 'Privacy',
+    imprint: 'Note Legali',
   },
   seo: {
     home: {
-      title: 'Run4Dev | Agenti IA & Automazione Processi | Framework Cortex',
-      description: 'Run4Dev crea agenti IA intelligenti che automatizzano i processi aziendali. Alimentato da Cortex, il nostro framework multi-provider. Strategia, sviluppo, deployment.',
-      ogTitle: 'Run4Dev \u2014 Agenti IA che automatizzano il tuo business',
+      title: 'Run4Dev | Agenti IA & Automazione Processi | Germania',
+      description: 'Run4Dev crea agenti IA personalizzati che automatizzano i processi aziendali. Riduci i costi, risparmia tempo, scala senza assumere. Sede a Regensburg, Germania.',
+      ogTitle: 'Run4Dev \u2014 Agenti IA che Automatizzano la Tua Azienda',
     },
-    cortex: {
-      title: 'Framework Cortex | Orchestrazione Agenti IA Enterprise | Run4Dev',
-      description: 'Cortex \u00e8 un framework TypeScript per agenti IA con supporto multi-provider (Claude, GPT, Gemini), delegazione gerarchica, monitoraggio costi e sandboxing enterprise.',
+    technology: {
+      title: 'La Nostra Tecnologia | Cortex AI Engine | Run4Dev',
+      description: 'Cortex \u00e8 il motore IA proprietario di Run4Dev. Multi-provider, type-safe, production-grade. La tecnologia dietro le nostre soluzioni di automazione.',
     },
-    services: {
-      title: 'Servizi Automazione IA | Agenti IA Personalizzati & Integrazione | Run4Dev',
-      description: 'Consulenza strategica IA, sviluppo agenti personalizzati, automazione processi, integrazione sistemi e sviluppo web/app. Soluzioni enterprise di Run4Dev.',
+    solutions: {
+      title: 'Soluzioni di Automazione IA | Agenti IA Personalizzati | Run4Dev',
+      description: 'Sviluppo agenti IA personalizzati, automazione processi, consulenza strategica e sviluppo web. Soluzioni IA enterprise di Run4Dev.',
     },
     about: {
-      title: 'Chi \u00e8 Run4Dev | Team di Ingegneria IA in Germania',
-      description: 'Run4Dev \u00e8 un\u2019azienda di ingegneria IA e software con sede a Regensburg, Germania. Creatori del framework Cortex per agenti. Automazione IA full-stack.',
+      title: 'Chi \u00c8 Run4Dev | Team di Ingegneria IA in Germania',
+      description: 'Run4Dev \u00e8 un\u2019azienda di ingegneria IA e software con sede a Regensburg, Germania. Creatori del motore Cortex. Automazione IA full-stack.',
     },
     contact: {
       title: 'Contatta Run4Dev | Prenota una Consulenza IA Gratuita',
-      description: 'Contatta Run4Dev per sviluppo agenti IA, automazione processi o una sessione strategica gratuita. Tempo di risposta sotto i 30 minuti. Regensburg, Germania.',
+      description: 'Contatta Run4Dev per automazione IA, ottimizzazione processi o una sessione strategica gratuita. Tempo di risposta sotto i 30 minuti.',
     },
   },
 };
