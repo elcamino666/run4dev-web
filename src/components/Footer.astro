@@ -1,0 +1,91 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath, type Lang } from '../i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const langs: Lang[] = ['en', 'de', 'it'];
+const currentYear = new Date().getFullYear();
+
+const navLinks = [
+  { label: t.nav.home, path: '/' },
+  { label: t.nav.cortex, path: '/cortex-framework' },
+  { label: t.nav.services, path: '/services' },
+  { label: t.nav.about, path: '/about' },
+  { label: t.nav.contact, path: '/contact' },
+];
+---
+
+<footer class="bg-bg-dark border-t border-bg-dark">
+  <div class="mx-auto max-w-[1200px] px-4 sm:px-6 py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+      <!-- Column 1: Company info -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-bold text-[#faf9f5]">Run4Dev</h3>
+        <p class="text-sm text-[#b0aea5] leading-relaxed">
+          Steinweg 4<br />
+          93059 Regensburg<br />
+          Germany
+        </p>
+      </div>
+
+      <!-- Column 2: Navigation -->
+      <div class="space-y-4">
+        <h3 class="text-sm font-semibold text-[#faf9f5] uppercase tracking-wider">Navigation</h3>
+        <nav class="flex flex-col gap-2">
+          {navLinks.map((link) => (
+            <a
+              href={getLocalizedPath(lang, link.path)}
+              class="text-sm text-[#b0aea5] hover:text-accent transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+      <!-- Column 3: Legal + Language -->
+      <div class="space-y-4">
+        <h3 class="text-sm font-semibold text-[#faf9f5] uppercase tracking-wider">Legal</h3>
+        <nav class="flex flex-col gap-2">
+          <a
+            href={getLocalizedPath(lang, '/privacy')}
+            class="text-sm text-[#b0aea5] hover:text-accent transition-colors"
+          >
+            {t.footer.privacy}
+          </a>
+          <a
+            href={getLocalizedPath(lang, '/imprint')}
+            class="text-sm text-[#b0aea5] hover:text-accent transition-colors"
+          >
+            {t.footer.imprint}
+          </a>
+        </nav>
+
+        <div class="pt-2">
+          <h3 class="text-sm font-semibold text-[#faf9f5] uppercase tracking-wider mb-2">Language</h3>
+          <div class="flex items-center gap-3">
+            {langs.map((l) => (
+              <a
+                href={getLocalizedPath(l, '/')}
+                class:list={[
+                  'text-sm font-medium uppercase transition-colors',
+                  l === lang ? 'text-accent' : 'text-[#b0aea5] hover:text-accent',
+                ]}
+              >
+                {l}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-12 pt-6 border-t border-[#2a2a28] text-center">
+      <p class="text-sm text-[#b0aea5]">
+        &copy; {currentYear} Run4Dev. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

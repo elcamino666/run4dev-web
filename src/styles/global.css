@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #faf9f5;
+  --color-bg-surface: #e8e6dc;
+  --color-bg-dark: #141413;
+  --color-accent: #d97757;
+  --color-text-primary: #191918;
+  --color-text-secondary: #4a4744;
+  --color-text-muted: #b0aea5;
+  --color-border: #e8e6dc;
+  --color-glow: rgba(217, 119, 87, 0.08);
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: 'Playfair Display Variable', ui-serif, Georgia, 'Times New Roman', serif;
+}
+
+@keyframes gradient-rotate {
+  from { --gradient-angle: 0deg; }
+  to { --gradient-angle: 360deg; }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(217, 119, 87, 0.05); }
+  50% { box-shadow: 0 0 25px rgba(217, 119, 87, 0.1); }
+}
+
+@layer base {
+  html {
+    background-color: #faf9f5;
+    color: #4a4744;
+    font-family: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    min-height: 100vh;
+    line-height: 1.7;
+    font-size: 18px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display Variable', ui-serif, Georgia, 'Times New Roman', serif;
+    color: #191918;
+  }
+  ::selection {
+    background-color: rgba(217, 119, 87, 0.15);
+    color: #141413;
+  }
+}
+
+/* Scroll reveal animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}

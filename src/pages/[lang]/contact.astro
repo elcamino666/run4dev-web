@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GlowCard from '../../components/GlowCard.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import { useTranslations, type Lang } from '../../i18n';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'it' } },
+  ];
+}
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  title={t.seo.contact.title}
+  description={t.seo.contact.description}
+  page="contact"
+>
+  <!-- Hero Section (simple gradient) -->
+  <section class="relative py-32 md:py-40 text-center pt-24">
+    <div class="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-surface/20 to-bg-primary" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-[1200px] px-6 pt-24">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold max-w-4xl mx-auto text-text-primary">
+        {t.contact.hero.h1}
+      </h1>
+      <p class="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mt-6">
+        {t.contact.hero.subtitle}
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Content Section -->
+  <section class="py-24">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="max-w-3xl mx-auto">
+        <GlowCard>
+          <ContactForm />
+        </GlowCard>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

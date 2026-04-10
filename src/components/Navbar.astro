@@ -1,0 +1,231 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath, type Lang } from '../i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const langs: Lang[] = ['en', 'de', 'it'];
+const otherLangs = langs.filter((l) => l !== lang);
+
+// Extract the current page path (strip the /lang/ prefix)
+const pathParts = Astro.url.pathname.split('/').filter(Boolean);
+const currentPagePath = '/' + (pathParts.length > 1 ? pathParts.slice(1).join('/') : '');
+
+const navLinks = [
+  { label: t.nav.home, path: '/' },
+  { label: t.nav.cortex, path: '/cortex-framework' },
+  { label: t.nav.services, path: '/services' },
+  { label: t.nav.about, path: '/about' },
+  { label: t.nav.contact, path: '/contact' },
+];
+
+function isActive(linkPath: string): boolean {
+  return currentPagePath === linkPath || (linkPath !== '/' && currentPagePath.startsWith(linkPath));
+}
+---
+
+<nav
+  class="fixed top-0 left-0 right-0 z-50 bg-bg-primary/80 backdrop-blur-xl border-b border-border"
+  id="main-nav"
+>
+  <div class="mx-auto max-w-[1200px] h-16 flex items-center justify-between px-4 sm:px-6">
+    <!-- Logo -->
+    <a
+      href={getLocalizedPath(lang, '/')}
+      class="flex items-center gap-2 text-text-primary hover:text-accent transition-colors"
+    >
+      <svg
+        class="w-7 h-7 text-accent"
+        viewBox="0 0 28 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <circle cx="14" cy="6" r="3" fill="currentColor" />
+        <circle cx="6" cy="22" r="3" fill="currentColor" />
+        <circle cx="22" cy="22" r="3" fill="currentColor" />
+        <line x1="14" y1="9" x2="7.5" y2="19.5" stroke="currentColor" stroke-width="1.5" />
+        <line x1="14" y1="9" x2="20.5" y2="19.5" stroke="currentColor" stroke-width="1.5" />
+        <line x1="9" y1="22" x2="19" y2="22" stroke="currentColor" stroke-width="1.5" />
+      </svg>
+      <span class="text-lg font-bold tracking-tight text-text-primary">Run4Dev</span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <div class="hidden md:flex items-center gap-6">
+      {navLinks.map((link) => (
+        <a
+          href={getLocalizedPath(lang, link.path)}
+          class:list={[
+            'text-sm font-medium transition-colors',
+            isActive(link.path)
+              ? 'text-accent'
+              : 'text-text-muted hover:text-text-primary',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+
+    <!-- Right side: language switcher + CTA + mobile hamburger -->
+    <div class="flex items-center gap-3">
+      <!-- Language switcher (desktop) -->
+      <div class="hidden md:block relative" id="lang-switcher-desktop">
+        <button
+          class="text-sm font-medium text-text-muted hover:text-text-primary transition-colors px-2 py-1 uppercase"
+          id="lang-btn-desktop"
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          {lang}
+        </button>
+        <div
+          class="absolute right-0 top-full mt-1 bg-bg-primary rounded-lg border border-border shadow-sm py-1 opacity-0 invisible transition-all duration-200"
+          id="lang-dropdown-desktop"
+        >
+          {otherLangs.map((l) => (
+            <a
+              href={getLocalizedPath(l, currentPagePath)}
+              class="block px-4 py-1.5 text-sm text-text-muted hover:text-text-primary hover:bg-bg-surface/50 uppercase transition-colors"
+            >
+              {l}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- CTA button (desktop) — dark Anthropic style -->
+      <a
+        href="#"
+        class="hidden md:inline-flex items-center px-5 py-2 bg-bg-dark text-bg-primary text-sm font-semibold rounded-full transition-all duration-200 hover:bg-bg-dark/90 hover:scale-[1.02]"
+      >
+        {t.nav.bookCall}
+      </a>
+
+      <!-- Hamburger button (mobile) -->
+      <button
+        class="md:hidden flex flex-col items-center justify-center w-10 h-10 gap-1.5"
+        id="hamburger-btn"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span class="w-5 h-0.5 bg-text-primary transition-all duration-300" id="hamburger-top"></span>
+        <span class="w-5 h-0.5 bg-text-primary transition-all duration-300" id="hamburger-mid"></span>
+        <span class="w-5 h-0.5 bg-text-primary transition-all duration-300" id="hamburger-bot"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out bg-bg-primary/95 backdrop-blur-xl border-t border-border/50"
+    id="mobile-menu"
+  >
+    <div class="px-4 py-4 flex flex-col gap-3">
+      {navLinks.map((link) => (
+        <a
+          href={getLocalizedPath(lang, link.path)}
+          class:list={[
+            'text-base font-medium py-2 transition-colors',
+            isActive(link.path)
+              ? 'text-accent'
+              : 'text-text-muted hover:text-text-primary',
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
+
+      <!-- Language options (mobile) -->
+      <div class="flex items-center gap-3 py-2 border-t border-border/50 mt-1">
+        <span class="text-xs text-text-muted uppercase tracking-wider">Lang:</span>
+        {langs.map((l) => (
+          <a
+            href={getLocalizedPath(l, currentPagePath)}
+            class:list={[
+              'text-sm font-medium uppercase transition-colors',
+              l === lang ? 'text-accent' : 'text-text-muted hover:text-text-primary',
+            ]}
+          >
+            {l}
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA button (mobile) — dark Anthropic style -->
+      <a
+        href="#"
+        class="inline-flex items-center justify-center px-5 py-2.5 bg-bg-dark text-bg-primary text-sm font-semibold rounded-full transition-all duration-200 hover:bg-bg-dark/90 mt-1"
+      >
+        {t.nav.bookCall}
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer to offset fixed navbar height -->
+<div class="h-16" aria-hidden="true"></div>
+
+<script>
+  function initNavbar() {
+    // Mobile menu toggle
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerTop = document.getElementById('hamburger-top');
+    const hamburgerMid = document.getElementById('hamburger-mid');
+    const hamburgerBot = document.getElementById('hamburger-bot');
+
+    if (hamburgerBtn && mobileMenu) {
+      hamburgerBtn.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.contains('max-h-screen');
+
+        if (isOpen) {
+          mobileMenu.classList.remove('max-h-screen');
+          mobileMenu.classList.add('max-h-0');
+          hamburgerBtn.setAttribute('aria-expanded', 'false');
+          hamburgerTop?.classList.remove('rotate-45', 'translate-y-[4px]');
+          hamburgerMid?.classList.remove('opacity-0');
+          hamburgerBot?.classList.remove('-rotate-45', '-translate-y-[4px]');
+        } else {
+          mobileMenu.classList.remove('max-h-0');
+          mobileMenu.classList.add('max-h-screen');
+          hamburgerBtn.setAttribute('aria-expanded', 'true');
+          hamburgerTop?.classList.add('rotate-45', 'translate-y-[4px]');
+          hamburgerMid?.classList.add('opacity-0');
+          hamburgerBot?.classList.add('-rotate-45', '-translate-y-[4px]');
+        }
+      });
+    }
+
+    // Desktop language switcher toggle
+    const langBtn = document.getElementById('lang-btn-desktop');
+    const langDropdown = document.getElementById('lang-dropdown-desktop');
+
+    if (langBtn && langDropdown) {
+      langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isVisible = !langDropdown.classList.contains('invisible');
+        if (isVisible) {
+          langDropdown.classList.add('opacity-0', 'invisible');
+          langBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          langDropdown.classList.remove('opacity-0', 'invisible');
+          langBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', () => {
+        langDropdown.classList.add('opacity-0', 'invisible');
+        langBtn.setAttribute('aria-expanded', 'false');
+      });
+    }
+  }
+
+  // Run on initial load
+  initNavbar();
+
+  // Re-run after View Transitions navigation
+  document.addEventListener('astro:after-swap', initNavbar);
+</script>

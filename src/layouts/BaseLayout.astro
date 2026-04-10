@@ -1,0 +1,91 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource-variable/playfair-display';
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import { getLangFromUrl, type Lang } from '../i18n';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  ogTitle?: string;
+  ogImage?: string;
+  jsonLd?: Record<string, unknown>;
+  page?: string;
+}
+
+const { title, description, ogTitle, ogImage, jsonLd, page } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+
+const localeMap: Record<Lang, string> = {
+  en: 'en_US',
+  de: 'de_DE',
+  it: 'it_IT',
+};
+
+const langs: Lang[] = ['en', 'de', 'it'];
+const pagePath = page ?? '/';
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={canonicalUrl.href} />
+
+    {langs.map((l) => (
+      <link
+        rel="alternate"
+        hreflang={l}
+        href={new URL(`/${l}${pagePath.startsWith('/') ? pagePath : '/' + pagePath}`, Astro.site).href}
+      />
+    ))}
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL(`/en${pagePath.startsWith('/') ? pagePath : '/' + pagePath}`, Astro.site).href}
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={ogTitle ?? title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:locale" content={localeMap[lang]} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle ?? title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- JSON-LD -->
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
+
+    <ClientRouter />
+  </head>
+  <body class="bg-bg-primary text-text-secondary min-h-screen flex flex-col">
+    <Navbar />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import '../scripts/scroll-reveal';
+    </script>
+  </body>
+</html>

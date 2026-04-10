@@ -1,0 +1,88 @@
+---
+interface Props {
+  value: string;
+  suffix: string;
+  label: string;
+}
+
+const { value, suffix, label } = Astro.props;
+---
+
+<div class="scroll-reveal text-center" data-counter-value={value} data-counter-suffix={suffix}>
+  <div class="text-5xl md:text-6xl font-bold text-accent mb-2">
+    <span class="counter-number">0</span><span class="counter-suffix">{suffix}</span>
+  </div>
+  <p class="text-text-secondary text-sm md:text-base">{label}</p>
+</div>
+
+<script>
+  function initCounters() {
+    const counters = document.querySelectorAll('[data-counter-value]');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            if (el.dataset.counted) return;
+            el.dataset.counted = 'true';
+
+            const targetValue = el.dataset.counterValue ?? '0';
+            const numberEl = el.querySelector('.counter-number');
+            if (!numberEl) return;
+
+            // Handle non-numeric values like "24/7"
+            const numericMatch = targetValue.match(/^(\d+)/);
+            if (!numericMatch) {
+              numberEl.textContent = targetValue;
+              // Hide the suffix span since the value already includes non-numeric content
+              const suffixEl = el.querySelector('.counter-suffix');
+              if (suffixEl) suffixEl.textContent = '';
+              return;
+            }
+
+            const target = parseInt(numericMatch[1], 10);
+            const duration = 2000;
+            const startTime = performance.now();
+
+            function animate(currentTime: number) {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              // Ease-out cubic
+              const eased = 1 - Math.pow(1 - progress, 3);
+              const current = Math.floor(eased * target);
+              numberEl!.textContent = current.toString();
+
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              } else {
+                // Set final value to the full target string (handles "24/7" etc.)
+                numberEl!.textContent = targetValue;
+                // Hide suffix since it's handled in the value display
+                if (targetValue !== numericMatch![1]) {
+                  const suffixEl = el.querySelector('.counter-suffix');
+                  if (suffixEl) suffixEl.textContent = '';
+                }
+              }
+            }
+
+            requestAnimationFrame(animate);
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    counters.forEach((el) => {
+      // Reset for view transitions
+      (el as HTMLElement).removeAttribute('data-counted');
+      const numberEl = el.querySelector('.counter-number');
+      if (numberEl) numberEl.textContent = '0';
+      observer.observe(el);
+    });
+  }
+
+  initCounters();
+  document.addEventListener('astro:after-swap', initCounters);
+</script>

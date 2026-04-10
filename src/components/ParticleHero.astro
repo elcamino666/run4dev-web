@@ -1,0 +1,88 @@
+---
+interface Props {
+  id?: string;
+}
+
+const { id = 'particles-hero' } = Astro.props;
+---
+
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+  <!-- Particle canvas -->
+  <div id={id} class="absolute inset-0 z-0"></div>
+
+  <!-- Gradient overlay for text readability -->
+  <div class="absolute inset-0 z-[1] bg-gradient-to-b from-bg-primary/10 via-transparent to-bg-primary/80"></div>
+
+  <!-- Content slot -->
+  <div class="relative z-10 mx-auto max-w-[1200px] w-full px-4 sm:px-6 text-center pt-20">
+    <slot />
+  </div>
+</section>
+
+<script>
+  import { tsParticles } from '@tsparticles/engine';
+  import { loadSlim } from '@tsparticles/slim';
+
+  let slimLoaded = false;
+
+  async function initParticles() {
+    if (!slimLoaded) {
+      await loadSlim(tsParticles);
+      slimLoaded = true;
+    }
+    const containerId = document.querySelector('[id^="particles-"]')?.id ?? 'particles-hero';
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    // Clear any existing instance
+    const existing = tsParticles.dom().find((c) => c.id === containerId);
+    if (existing) {
+      existing.destroy();
+    }
+
+    await tsParticles.load({
+      id: containerId,
+      options: {
+        fullScreen: { enable: false },
+        background: { color: { value: 'transparent' } },
+        particles: {
+          number: { value: 70 },
+          color: { value: '#141413' },
+          shape: { type: 'circle' },
+          opacity: { value: { min: 0.3, max: 0.6 } },
+          size: { value: { min: 1.5, max: 4 } },
+          links: {
+            enable: true,
+            distance: 180,
+            color: '#141413',
+            opacity: 0.2,
+            width: 1.2,
+          },
+          move: {
+            enable: true,
+            speed: 1,
+            outModes: { default: 'bounce' },
+          },
+        },
+        interactivity: {
+          events: {
+            onHover: {
+              enable: true,
+              mode: 'grab',
+            },
+          },
+          modes: {
+            grab: {
+              distance: 180,
+              links: { opacity: 0.45 },
+            },
+          },
+        },
+        detectRetina: true,
+      },
+    });
+  }
+
+  initParticles();
+  document.addEventListener('astro:after-swap', initParticles);
+</script>

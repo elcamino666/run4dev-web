@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GlowCard from '../../components/GlowCard.astro';
+import CTASection from '../../components/CTASection.astro';
+import { useTranslations, getLocalizedPath, type Lang } from '../../i18n';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'it' } },
+  ];
+}
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  title={t.seo.about.title}
+  description={t.seo.about.description}
+  page="about"
+>
+  <!-- Hero Section (simple gradient, not ParticleHero) -->
+  <section class="relative py-32 md:py-40 text-center pt-24">
+    <div class="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-surface/20 to-bg-primary" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-[1200px] px-6 pt-24">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold max-w-4xl mx-auto text-text-primary">
+        {t.about.hero.h1}
+      </h1>
+      <p class="text-lg text-text-secondary max-w-2xl mx-auto mt-6">
+        {t.about.hero.intro}
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-8">
+        {t.about.story.headline}
+      </h2>
+      {t.about.story.content.split('\n\n').map((paragraph) => (
+        <p class="text-text-secondary leading-relaxed mb-6">{paragraph}</p>
+      ))}
+    </div>
+  </section>
+
+  <!-- What Sets Us Apart Section -->
+  <section class="py-24 md:py-32 bg-bg-surface/30">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
+        What Sets Us Apart
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {t.about.differentiators.map((item) => (
+          <GlowCard>
+            <h3 class="text-lg font-semibold text-text-primary mb-3">{item.title}</h3>
+            <p class="text-text-secondary">{item.description}</p>
+          </GlowCard>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Details Section -->
+  <section class="py-24">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="max-w-2xl mx-auto">
+        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8">
+          <div>
+            <dt class="text-sm font-medium text-text-muted mb-1">Company</dt>
+            <dd class="text-lg text-text-secondary">{t.about.company.name}</dd>
+          </div>
+          <div>
+            <dt class="text-sm font-medium text-text-muted mb-1">Location</dt>
+            <dd class="text-lg text-text-secondary">{t.about.company.location}</dd>
+          </div>
+          <div class="sm:col-span-2">
+            <dt class="text-sm font-medium text-text-muted mb-1">Focus</dt>
+            <dd class="text-lg text-text-secondary">{t.about.company.focus}</dd>
+          </div>
+          <div>
+            <dt class="text-sm font-medium text-text-muted mb-1">Core Technology</dt>
+            <dd class="text-lg text-text-secondary">{t.about.company.technology}</dd>
+          </div>
+          <div>
+            <dt class="text-sm font-medium text-text-muted mb-1">Email</dt>
+            <dd class="text-lg">
+              <a href={`mailto:${t.about.company.email}`} class="text-accent hover:underline">
+                {t.about.company.email}
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <CTASection
+    headline={t.home.cta.headline}
+    description={t.home.cta.description}
+    buttonText={t.home.cta.button}
+    buttonHref={getLocalizedPath(lang, '/contact')}
+    note={t.home.cta.note}
+  />
+</BaseLayout>

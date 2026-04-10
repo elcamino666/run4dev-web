@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import GlowCard from '../../components/GlowCard.astro';
+import ImagePlaceholder from '../../components/ImagePlaceholder.astro';
+import CTASection from '../../components/CTASection.astro';
+import { useTranslations, getLocalizedPath, type Lang } from '../../i18n';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'it' } },
+  ];
+}
+
+const lang = Astro.params.lang as Lang;
+const t = useTranslations(lang);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: t.services.items.map((s, i) => ({
+    "@type": "Service",
+    position: i + 1,
+    name: s.title,
+    description: s.description,
+    provider: { "@type": "Organization", name: "Run4Dev" },
+    areaServed: "Worldwide",
+  })),
+};
+---
+
+<BaseLayout
+  title={t.seo.services.title}
+  description={t.seo.services.description}
+  jsonLd={jsonLd}
+  page="services"
+>
+  <!-- Hero Section (simple gradient, not ParticleHero) -->
+  <section class="relative py-32 md:py-40 text-center pt-24">
+    <div class="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-surface/20 to-bg-primary" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-[1200px] px-6 pt-24">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold max-w-4xl mx-auto text-text-primary">
+        {t.services.hero.h1}
+      </h1>
+      <p class="text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mt-6">
+        {t.services.hero.subtitle}
+      </p>
+    </div>
+  </section>
+
+  <!-- Services List Section -->
+  <section class="py-24">
+    <div class="max-w-[1200px] mx-auto px-6 space-y-12">
+      {t.services.items.map((service, index) => (
+        <GlowCard>
+          <div class:list={[
+            'grid grid-cols-1 md:grid-cols-2 gap-8 items-center',
+            index % 2 === 1 ? 'md:[direction:rtl]' : '',
+          ]}>
+            <div class:list={[index % 2 === 1 ? 'md:[direction:ltr]' : '']}>
+              <ImagePlaceholder alt={service.imageAlt} aspectRatio="4/3" />
+            </div>
+            <div class:list={[index % 2 === 1 ? 'md:[direction:ltr]' : '']}>
+              <h3 class="text-2xl font-semibold text-text-primary mb-4">{service.title}</h3>
+              <p class="text-text-secondary mb-6">{service.description}</p>
+              <p class="text-sm text-text-secondary">
+                <span class="font-semibold text-text-primary">{t.services.deliverablesLabel} </span>
+                {service.deliverables}
+              </p>
+            </div>
+          </div>
+        </GlowCard>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <CTASection
+    headline={t.home.cta.headline}
+    description={t.home.cta.description}
+    buttonText={t.home.cta.button}
+    buttonHref={getLocalizedPath(lang, '/contact')}
+    note={t.home.cta.note}
+  />
+</BaseLayout>

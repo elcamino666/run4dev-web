@@ -1,0 +1,35 @@
+---
+import { Code } from 'astro:components';
+
+interface Props {
+  code: string;
+  lang?: string;
+  title?: string;
+}
+
+const { code, lang = 'typescript', title } = Astro.props;
+---
+
+<div class="code-block-wrapper rounded-2xl overflow-hidden border border-border shadow-sm">
+  {title && (
+    <div class="px-5 py-3 bg-[#141413] border-b border-[#2a2a28] text-sm text-[#b0aea5] font-mono">
+      {title}
+    </div>
+  )}
+  <div class="code-block-content overflow-x-auto bg-[#141413] p-5">
+    <Code code={code} lang={lang as any} theme="github-dark" />
+  </div>
+</div>
+
+<style>
+  .code-block-content :global(pre) {
+    background: transparent !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  .code-block-content :global(code) {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+</style>

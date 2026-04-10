@@ -1,0 +1,34 @@
+---
+interface Props {
+  headline: string;
+  description: string;
+  buttonText: string;
+  buttonHref?: string;
+  note?: string;
+}
+
+const { headline, description, buttonText, buttonHref = '#', note } = Astro.props;
+---
+
+<section class="relative py-24 md:py-32 overflow-hidden">
+  <!-- Subtle gradient background overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-bg-primary via-bg-surface/50 to-bg-primary" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-[800px] px-4 sm:px-6 text-center scroll-reveal">
+    <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+      {headline}
+    </h2>
+    <p class="text-lg text-text-secondary mb-10 leading-relaxed">
+      {description}
+    </p>
+    <a
+      href={buttonHref}
+      class="inline-flex items-center px-8 py-4 bg-bg-dark text-bg-primary font-semibold rounded-full transition-all duration-300 hover:bg-bg-dark/90 hover:scale-[1.02]"
+    >
+      {buttonText}
+    </a>
+    {note && (
+      <p class="mt-6 text-sm text-text-muted">{note}</p>
+    )}
+  </div>
+</section>
