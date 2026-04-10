@@ -4,7 +4,9 @@ import ParticleHero from '../../components/ParticleHero.astro';
 import TrustBar from '../../components/TrustBar.astro';
 import GlowCard from '../../components/GlowCard.astro';
 import MetricCounter from '../../components/MetricCounter.astro';
+import CaseStudyCard from '../../components/CaseStudyCard.astro';
 import StepTimeline from '../../components/StepTimeline.astro';
+import TelegramTeaser from '../../components/TelegramTeaser.astro';
 import CTASection from '../../components/CTASection.astro';
 import { useTranslations, getLocalizedPath, type Lang } from '../../i18n';
 
@@ -59,7 +61,7 @@ const jsonLd = {
         {t.home.hero.ctaPrimary}
       </a>
       <a
-        href={getLocalizedPath(lang, '/cortex')}
+        href={getLocalizedPath(lang, '/solutions')}
         class="border border-text-primary text-text-primary px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-bg-dark hover:text-bg-primary"
       >
         {t.home.hero.ctaSecondary}
@@ -70,17 +72,17 @@ const jsonLd = {
     </div>
   </ParticleHero>
 
-  <!-- Value Proposition Section -->
+  <!-- Pain + Solution Cards -->
   <section class="py-24 md:py-32">
     <div class="max-w-[1200px] mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-bold text-center text-text-primary">
-        {t.home.valueProposition.headline}
+        {t.home.painSolution.headline}
       </h2>
       <p class="text-text-secondary text-center max-w-2xl mx-auto mt-4">
-        {t.home.valueProposition.description}
+        {t.home.painSolution.description}
       </p>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-        {t.home.valueProposition.cards.map((card) => (
+        {t.home.painSolution.cards.map((card) => (
           <GlowCard>
             <h3 class="text-xl font-semibold text-text-primary mb-3">{card.title}</h3>
             <p class="text-text-secondary">{card.description}</p>
@@ -90,8 +92,23 @@ const jsonLd = {
     </div>
   </section>
 
-  <!-- Metrics Section -->
-  <section class="py-24 bg-bg-surface/30">
+  <!-- Case Study -->
+  <section class="py-24 bg-bg-surface/20">
+    <div class="max-w-[800px] mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
+        {t.home.caseStudy.headline}
+      </h2>
+      <CaseStudyCard
+        label={t.home.caseStudy.label}
+        clientType={t.home.caseStudy.clientType}
+        resultHeadline={t.home.caseStudy.resultHeadline}
+        description={t.home.caseStudy.description}
+      />
+    </div>
+  </section>
+
+  <!-- Metrics -->
+  <section class="py-24">
     <div class="max-w-[1200px] mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-bold text-center text-text-primary mb-12">
         {t.home.metricsHeadline}
@@ -104,7 +121,7 @@ const jsonLd = {
     </div>
   </section>
 
-  <!-- How It Works Section -->
+  <!-- How It Works -->
   <section class="py-24 md:py-32">
     <div class="max-w-[1200px] mx-auto px-6">
       <p class="text-accent text-sm font-semibold uppercase tracking-wider text-center mb-4">
@@ -117,7 +134,21 @@ const jsonLd = {
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- Telegram Teaser -->
+  <section class="py-24">
+    <div class="max-w-[800px] mx-auto px-6">
+      <TelegramTeaser
+        label={t.home.telegramTeaser.label}
+        headline={t.home.telegramTeaser.headline}
+        description={t.home.telegramTeaser.description}
+        points={t.home.telegramTeaser.points}
+        cta={t.home.telegramTeaser.cta}
+        emailPlaceholder={t.home.telegramTeaser.emailPlaceholder}
+      />
+    </div>
+  </section>
+
+  <!-- Final CTA -->
   <CTASection
     headline={t.home.cta.headline}
     description={t.home.cta.description}
